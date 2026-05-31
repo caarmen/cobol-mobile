@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+		 xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ca.rmen</groupId>
+	<artifactId>gnucobol-android</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+
+	<name>gnucobol-android</name>
+	<description>Port of GnuCOBOL to Android.</description>
+	<url>https://github.com/caarmen/cobol-mobile</url>
+	<inceptionYear>2026</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE (LGPL) Version 3</name>
+			<url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+	    <url>https://github.com/caarmen/cobol-mobile</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>calvarez</id>
+			<name>Carmen Alvarez</name>
+			<email>carmen@rmen.ca</email>
+			<url>https://github.com/caarmen</url>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>Europe/Paris</timezone>
+			<properties>
+				<picUrl>https://avatars1.githubusercontent.com/u/1731388</picUrl>
+			</properties>
+		</developer>
+	</developers>
+</project>
