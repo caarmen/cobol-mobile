@@ -13,3 +13,5 @@ for target in aarch64-linux-android x86_64-linux-android; do
     "${script_dir}/build-libdb.sh"
     "${script_dir}/build-gnucobol.sh"
 done
+
+"${script_dir}/package.sh"
