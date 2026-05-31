@@ -41,6 +41,7 @@ make SUBDIRS="libcob"
 # the symbols from libcob.a and dependencies
 # gmp and db:
 "${CLANG}" -shared -fPIC \
+  -Wl,-soname,libcob.so \
   -Wl,--whole-archive \
   libcob/.libs/libcob.a \
   "${prefix_root}/lib/libgmp.a" \
