@@ -5,7 +5,6 @@ package com.example.coboldemo
 class AnswerToLife {
     companion object {
         init {
-            System.loadLibrary("cob")
             System.loadLibrary("answer")
         }
     }
