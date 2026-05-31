@@ -13,4 +13,3 @@ case "$(uname -s)-$(uname -m)" in
 esac
 
 export TOOLCHAIN="${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/${HOST_TAG}"
-export CLANG="${TOOLCHAIN}/bin/aarch64-linux-android35-clang"
