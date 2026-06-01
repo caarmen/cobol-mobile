@@ -10,18 +10,14 @@ The gnucobol-android artifact is available on maven central:
 `versions.toml`:
 ```toml
 [versions]
-gnucobol = "0.0.1"
+gnucobol = "0.0.2"
 #...
 [libraries]
 gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucobol" }
 ```
 `build.gradle.kts`:
 ```
-implementation(libs.gnucobol) {
-    artifact {
-        type = "aar"
-    }
-}
+implementation(libs.gnucobol)
 ```
 
 The artifact is licensed under the LGPLv3 license ([COPYING.LIBRARY](COPYING.LIBRARY)).
