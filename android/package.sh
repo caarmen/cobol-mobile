@@ -35,7 +35,7 @@ popd || exit
 
 echo "Created package in ${target_file}"
 
-version="0.0.1"
+version="0.0.2"
 mvn install:install-file \
  -Dfile="${target_file}" \
  -DgroupId=ca.rmen\
