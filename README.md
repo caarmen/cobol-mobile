@@ -7,8 +7,21 @@ For now, only Android is supported.
 
 The gnucobol-android artifact is available on maven central:
 
+`versions.toml`:
+```toml
+[versions]
+gnucobol = "0.0.1"
+#...
+[libraries]
+gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucobol" }
 ```
-implementation("ca.rmen:gnucobol-android:0.0.1")
+`build.gradle.kts`:
+```
+implementation(libs.gnucobol) {
+    artifact {
+        type = "aar"
+    }
+}
 ```
 
 The artifact is licensed under the LGPLv3 license ([COPYING.LIBRARY](COPYING.LIBRARY)).
