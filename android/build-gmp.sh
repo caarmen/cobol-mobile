@@ -27,7 +27,7 @@ pushd gmp || exit
 
 ./configure \
   --prefix="${prefix}" \
-  --host=aarch64-linux-android \
+  --host="${HOST}" \
   --disable-shared \
   --disable-assembly \
   CC="${CLANG}" \

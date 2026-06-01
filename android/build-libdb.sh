@@ -19,13 +19,13 @@ fi
 
 pushd libdb/build_unix || exit
 
-curl -o ../dist/config.sub 'https://cgit.git.savannah.gnu.org/cgit/config.git/plain/config.sub'
-curl -o ../dist/config.guess 'https://cgit.git.savannah.gnu.org/cgit/config.git/plain/config.guess'
+curl -o ../dist/config.sub 'https://raw.githubusercontent.com/gcc-mirror/gcc/refs/heads/master/config.sub'
+curl -o ../dist/config.guess 'https://raw.githubusercontent.com/gcc-mirror/gcc/refs/heads/master/config.guess'
 chmod +x ../dist/config.sub ../dist/config.guess
 
 ../dist/configure \
   --prefix="${prefix}" \
-  --host=aarch64-linux-android \
+  --host="${HOST}" \
   --disable-tcl \
   --disable-test \
   --enable-sequences \

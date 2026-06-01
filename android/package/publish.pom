@@ -6,8 +6,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ca.rmen</groupId>
 	<artifactId>gnucobol-android</artifactId>
-	<version>0.0.1</version>
-	<packaging>jar</packaging>
+	<version>0.0.2</version>
+	<packaging>aar</packaging>
 
 	<name>gnucobol-android</name>
 	<description>Port of GnuCOBOL to Android.</description>

@@ -26,7 +26,7 @@ fi
 pushd gnucobol-android || exit
 
 ./configure \
-    --host=aarch64-linux-android \
+    --host="${HOST}" \
     --prefix="${prefix_root}" \
     --disable-shared \
     LDFLAGS="-L${prefix_root}/lib" \
