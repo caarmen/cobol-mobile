@@ -25,7 +25,7 @@ chmod +x ../dist/config.sub ../dist/config.guess
 
 ../dist/configure \
   --prefix="${prefix}" \
-  --host=aarch64-linux-android \
+  --host="${HOST}" \
   --disable-tcl \
   --disable-test \
   --enable-sequences \
