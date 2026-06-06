@@ -13,7 +13,7 @@ add_custom_command(
 add_custom_target(transpile_cobol DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/AnswerToLife.c)
 
 add_library(${PROJECT_NAME} SHARED
-        AnswerToLifeJni.c
+        AnswerToLifeJni.cpp
         ${CMAKE_CURRENT_BINARY_DIR}/AnswerToLife.c
 )
 add_dependencies(${PROJECT_NAME} transpile_cobol)
