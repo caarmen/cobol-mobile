@@ -8,9 +8,9 @@ class AnswerToLife {
             System.loadLibrary("answer")
         }
     }
-    external fun cobAnswerToLife(): String
+    external fun cobAnswerToLife(): Int
 
-    fun getAnswerToLife(): String {
+    fun getAnswerToLife(): Int {
         return cobAnswerToLife()
     }
 }
