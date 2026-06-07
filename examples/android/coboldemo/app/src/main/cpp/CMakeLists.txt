@@ -3,18 +3,30 @@ cmake_minimum_required(VERSION 3.22.1)
 project("answer")
 find_program(COBC cobc REQUIRED)
 
-add_custom_command(
-        OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/AnswerToLife.c
-        COMMAND ${COBC} -C ${CMAKE_CURRENT_SOURCE_DIR}/../cobol/AnswerToLife.cob
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../cobol/AnswerToLife.cob
-        COMMENT "Transpiling COBOL to C"
+set(COBOL_FILES
+        AnswerToLife
 )
-add_custom_target(transpile_cobol DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/AnswerToLife.c)
+set(COB_COPY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../cobol")
+set(GENERATED_C_FILES)
+
+foreach(COBOL_FILE ${COBOL_FILES})
+    set(INPUT_COB "${CMAKE_CURRENT_SOURCE_DIR}/../cobol/${COBOL_FILE}.cob")
+    set(OUTPUT_C "${CMAKE_CURRENT_BINARY_DIR}/${COBOL_FILE}.c")
+    add_custom_command(
+            OUTPUT ${OUTPUT_C}
+            COMMAND COB_COPY_DIR=${COB_COPY_DIR} ${COBC} -C ${INPUT_COB}
+            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+            DEPENDS ${INPUT_COB}
+            COMMENT "Transpiling ${COBOL_FILE}.cob to C"
+    )
+    list(APPEND GENERATED_C_FILES ${OUTPUT_C})
+endforeach ()
+
+add_custom_target(transpile_cobol DEPENDS ${GENERATED_C_FILES})
 
 add_library(${PROJECT_NAME} SHARED
         AnswerToLifeJni.cpp
-        ${CMAKE_CURRENT_BINARY_DIR}/AnswerToLife.c
+        ${GENERATED_C_FILES}
 )
 add_dependencies(${PROJECT_NAME} transpile_cobol)
 
