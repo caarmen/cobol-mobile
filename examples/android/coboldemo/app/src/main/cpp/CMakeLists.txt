@@ -20,6 +20,7 @@ add_dependencies(${PROJECT_NAME} transpile_cobol)
 
 find_package(cob REQUIRED CONFIG)
 set_target_properties(cob::libcob PROPERTIES IMPORTED_SONAME "libcob.so")
+get_target_property(LIBCOB_INCLUDE_DIRS cob::libcob INTERFACE_INCLUDE_DIRECTORIES)
 
 target_link_libraries(${PROJECT_NAME}
         cob::libcob
@@ -33,5 +34,6 @@ target_link_options(${PROJECT_NAME} PRIVATE
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
+        ${LIBCOB_INCLUDE_DIRS}
         ${CMAKE_CURRENT_BINARY_DIR}
 )
