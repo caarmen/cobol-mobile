@@ -26,7 +26,7 @@ import com.example.coboldemo.ui.theme.CobolDemoTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val answerToLife = AnswerToLife()
+        val answerToLife = AnswerToLife(this)
 
         enableEdgeToEdge()
         setContent {

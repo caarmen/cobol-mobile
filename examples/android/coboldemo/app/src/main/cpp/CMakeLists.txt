@@ -6,6 +6,7 @@ set(COBOL_FILES
 )
 set(C_FILES
         AnswerToLifeJni.c
+        AndroidBridge.c
 )
 set(GENERATED_C_FILES)
 
