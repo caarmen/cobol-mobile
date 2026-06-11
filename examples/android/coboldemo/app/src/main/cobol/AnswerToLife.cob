@@ -1,8 +1,12 @@
        IDENTIFICATION DIVISION.
        PROGRAM-ID. ANSWER-TO-LIFE.
        DATA DIVISION.
-       LINKAGE SECTION.
 
+       WORKING-STORAGE SECTION.
+       01 C-FIZZ PIC X(10) VALUE Z"Fizz!".
+       01 C-BUZZ PIC X(10) VALUE Z"Buzz!".
+
+       LINKAGE SECTION.
        01 IN-PTR-JNI-ENV USAGE POINTER.
        01 IN-PTR-CONTEXT USAGE POINTER.
        01 OUT-ANSWER BINARY-SHORT UNSIGNED.
@@ -17,13 +21,18 @@
                FUNCTION RANDOM(FUNCTION CURRENT-DATE(1:16))
 
           *> Show a toast for some numbers
-           IF FUNCTION MOD(OUT-ANSWER, 3) = 0
-           THEN
+           EVALUATE TRUE
+           WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
                CALL STATIC "showToast" USING BY REFERENCE
                    IN-PTR-JNI-ENV
                    IN-PTR-CONTEXT
-                   Z"Fizz!"
-           END-IF
+                   C-FIZZ
+           WHEN FUNCTION MOD(OUT-ANSWER, 5) = 0
+               CALL STATIC "SHOW-TOAST" USING BY REFERENCE
+                   IN-PTR-JNI-ENV
+                   IN-PTR-CONTEXT
+                   C-BUZZ
+           END-EVALUATE
            SET RETURN-CODE TO 1.
 
 
