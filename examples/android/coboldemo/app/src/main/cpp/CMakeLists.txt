@@ -4,6 +4,9 @@ project("answer")
 set(COBOL_FILES
         AnswerToLife
 )
+set(C_FILES
+        AnswerToLifeJni.c
+)
 set(GENERATED_C_FILES)
 
 find_program(COBC cobc REQUIRED)
@@ -24,7 +27,7 @@ endforeach ()
 add_custom_target(transpile_cobol DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/AnswerToLife.c)
 
 add_library(${PROJECT_NAME} SHARED
-        AnswerToLifeJni.c
+        ${C_FILES}
         ${GENERATED_C_FILES}
 )
 add_dependencies(${PROJECT_NAME} transpile_cobol)
