@@ -1,6 +1,7 @@
 package com.example.coboldemo
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +27,7 @@ import com.example.coboldemo.ui.theme.CobolDemoTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("CARM", "onCreate")
         val answerToLife = AnswerToLife(this)
 
         enableEdgeToEdge()

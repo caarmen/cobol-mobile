@@ -1,0 +1,30 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. SHOW-TOAST.
+
+       DATA DIVISION.
+
+       LOCAL-STORAGE SECTION.
+       01 LS-PTR-TOAST-CLASS USAGE POINTER.
+       01 LS-TOAST-CLASS-NAME PIC X(100) VALUE Z"android/widget/Toast".
+
+       LINKAGE SECTION.
+       01 IN-PTR-JNI-ENV USAGE POINTER.
+       01 IN-PTR-CONTEXT USAGE POINTER.
+       01 IN-MESSAGE PIC X(100).
+
+
+       PROCEDURE DIVISION USING
+           BY REFERENCE
+               IN-PTR-JNI-ENV
+               IN-PTR-CONTEXT
+               IN-MESSAGE.
+
+           CALL STATIC "FIND-CLASS" USING
+               IN-PTR-JNI-ENV
+               LS-TOAST-CLASS-NAME
+               LS-PTR-TOAST-CLASS
+
+           DISPLAY "CARM toast class " LS-PTR-TOAST-CLASS
+
+           .
+       END PROGRAM SHOW-TOAST.

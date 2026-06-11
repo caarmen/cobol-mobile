@@ -37,4 +37,9 @@ JNIEXPORT jint Java_com_example_coboldemo_AnswerToLife_cobAnswerToLife(
 
     return result;
 }
+jclass cobol_jni_find_class(JNIEnv* env, const char* name) {
+    // Because this is a native C++ function compiled by the Android Clang compiler,
+    // it respects all Scudo, x86_64 System V ABI, and prototyping rules.
+    return env->FindClass(name);
+}
 }
