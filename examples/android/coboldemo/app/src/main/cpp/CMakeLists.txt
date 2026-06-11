@@ -5,7 +5,7 @@ find_program(COBC cobc REQUIRED)
 
 add_custom_command(
         OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/AnswerToLife.c
-        COMMAND ${COBC} -C ${CMAKE_CURRENT_SOURCE_DIR}/../cobol/AnswerToLife.cob
+        COMMAND ${COBC} -g -C ${CMAKE_CURRENT_SOURCE_DIR}/../cobol/AnswerToLife.cob
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../cobol/AnswerToLife.cob
         COMMENT "Transpiling COBOL to C"
