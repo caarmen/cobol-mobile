@@ -1,5 +1,11 @@
 #include <jni.h>
 
+/**
+ * Show the given message as a Toast.
+ *
+ * This function demonstrates centralizing JNI boilerplate for multiple jvm method calls
+ * in a C function.
+ */
 void showToastC(JNIEnv *env, jobject context, const char *message) {
     jclass toastClass = (*env)->FindClass(env, "android/widget/Toast");
     jmethodID makeTextMethod = (*env)->GetStaticMethodID(

@@ -1,3 +1,17 @@
+      *>========================================================
+      *> Procedure to show a message as a Toast.
+      *>
+      *> Input arguments:
+      *>
+      *> IN-PTR-JNI-ENV: A POINTER to the JNIEnv struct.
+      *> IN-PTR-CONTEXT: A POINTER to an Android Context.
+      *> IN-MESSAGE: The message to display in the toast.
+      *>
+      *> This procedure demonstrates placing a maximum of the
+      *> JNI boilerplate in COBOL. A thin C wrapper
+      *> (JNIBridge.c) is required around each of the JNI
+      *> functions.
+      *>========================================================
        IDENTIFICATION DIVISION.
        PROGRAM-ID. SHOW-TOAST.
 
