@@ -3,9 +3,12 @@ cmake_minimum_required(VERSION 3.22.1)
 project("answer")
 set(COBOL_FILES
         AnswerToLife
+        AndroidBridge
 )
 set(C_FILES
         AnswerToLifeJni.c
+        AndroidBridge.c
+        JNIBridge.c
 )
 set(GENERATED_C_FILES)
 

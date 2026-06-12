@@ -1,16 +1,19 @@
 package com.example.coboldemo
 
+import android.content.Context
+
 // In companion object:
 
-class AnswerToLife {
+class AnswerToLife(private val context: Context) {
     companion object {
         init {
             System.loadLibrary("answer")
         }
     }
-    external fun cobAnswerToLife(): String
 
-    fun getAnswerToLife(): String {
-        return cobAnswerToLife()
+    external fun cobAnswerToLife(context: Context): Int
+
+    fun getAnswerToLife(): Int {
+        return cobAnswerToLife(context)
     }
 }
