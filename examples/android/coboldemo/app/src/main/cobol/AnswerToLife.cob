@@ -23,7 +23,7 @@
           *> Show a toast for some numbers
            EVALUATE TRUE
            WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
-               CALL STATIC "showToast" USING BY REFERENCE
+               CALL STATIC "showToastC" USING BY REFERENCE
                    IN-PTR-JNI-ENV
                    IN-PTR-CONTEXT
                    C-FIZZ

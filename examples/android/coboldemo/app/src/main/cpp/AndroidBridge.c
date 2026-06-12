@@ -1,6 +1,6 @@
 #include <jni.h>
 
-void showToast(JNIEnv *env, jobject context, const char *message) {
+void showToastC(JNIEnv *env, jobject context, const char *message) {
     jclass toastClass = (*env)->FindClass(env, "android/widget/Toast");
     jmethodID makeTextMethod = (*env)->GetStaticMethodID(
             env,
