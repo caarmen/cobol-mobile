@@ -5,6 +5,7 @@
        WORKING-STORAGE SECTION.
        01 C-FIZZ PIC X(10) VALUE Z"Fizz!".
        01 C-BUZZ PIC X(10) VALUE Z"Buzz!".
+       01 C-FIZZBUZZ PIC X(10) VALUE Z"FizzBuzz!".
 
        LINKAGE SECTION.
        01 IN-PTR-JNI-ENV USAGE POINTER.
@@ -22,6 +23,13 @@
 
           *> Show a toast for some numbers
            EVALUATE TRUE
+           WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
+               AND FUNCTION MOD(OUT-ANSWER, 5) = 0
+               CALL STATIC "showToastKt" USING BY REFERENCE
+                   IN-PTR-JNI-ENV
+                   IN-PTR-CONTEXT
+                   C-FIZZBUZZ
+
            WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
                CALL STATIC "showToastC" USING BY REFERENCE
                    IN-PTR-JNI-ENV
