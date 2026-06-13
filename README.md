@@ -1,7 +1,6 @@
-# GnuCOBOL for mobile (Android)
+# GnuCOBOL for mobile (Android/iOS)
 
 Port of GnuCOBOL for mobile platforms.
-For now, only Android is supported.
 
 ## Android
 
@@ -20,6 +19,12 @@ gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucob
 implementation(libs.gnucobol)
 ```
 
+## iOS
+
+Add this repository as an SPM dependency `https://github.com/caarmen/cobol-mobile`.
+
+
+## Licensing
 The artifact is licensed under the LGPLv3 license ([COPYING.LIBRARY](COPYING.LIBRARY)).
 
 The build scripts and example app are licensed under the MIT license ([COPYING.SCRIPTS](COPYING.SCRIPTS)).
