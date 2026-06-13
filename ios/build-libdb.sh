@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+
+script_dir="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
+source "${script_dir}/build_env.sh"
+
+deps_dir="deps"
+mkdir -p "${deps_dir}"
+pushd "${deps_dir}" || exit
+prefix="${PREFIX_ROOT:-$HOME/.local/cobol-ios}"
+mkdir -p "${prefix}"
+prefix="$(realpath "${prefix}")"
+
+if [ ! -d libdb ]; then
+    git clone https://github.com/berkeleydb/libdb.git
+fi
+
+
+pushd libdb/build_unix || exit
+
+curl -o ../dist/config.sub 'https://raw.githubusercontent.com/gcc-mirror/gcc/refs/heads/master/config.sub'
+curl -o ../dist/config.guess 'https://raw.githubusercontent.com/gcc-mirror/gcc/refs/heads/master/config.guess'
+chmod +x ../dist/config.sub ../dist/config.guess
+
+../dist/configure \
+  --prefix="${prefix}" \
+  --host="${HOST:-arm64-apple-ios}" \
+  --disable-tcl \
+  --disable-test \
+  --enable-sequences \
+  --enable-static \
+  --disable-dbm \
+  --disable-java \
+  --disable-sql \
+  --disable-shared \
+  --disable-cxx \
+  --with-mutex=POSIX/pthreads \
+  CC="${CLANG}" \
+  CFLAGS="${CFLAGS}"
+
+make
+make install
+make clean
+
+popd || exit
+rm -rf libdb
+popd || exit
