@@ -1,0 +1,17 @@
+// swift-tools-version: 6.3
+import PackageDescription
+
+let package = Package(
+    name: "GnuCOBOL-iOS",
+    platforms: [.iOS(.v15)],
+    products: [
+        .library(name: "GnuCOBOL-iOS", targets: ["GnuCOBOL"])
+    ],
+    targets: [
+        .binaryTarget(
+            name: "GnuCOBOL",
+            url: "https://github.com/caarmen/cobol-mobile/releases/download/v__VERSION__/GnuCOBOL.xcframework.zip",
+            checksum: "__SHA256_CHECKSUM__"
+        )
+    ]
+)
