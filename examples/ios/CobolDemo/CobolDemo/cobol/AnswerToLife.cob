@@ -1,0 +1,36 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. ANSWER-TO-LIFE.
+       DATA DIVISION.
+
+       WORKING-STORAGE SECTION.
+       01 C-FIZZ PIC X(10) VALUE Z"Fizz!".
+       01 C-BUZZ PIC X(10) VALUE Z"Buzz!".
+       01 C-FIZZBUZZ PIC X(10) VALUE Z"FizzBuzz!".
+
+       LINKAGE SECTION.
+       01 OUT-ANSWER BINARY-SHORT UNSIGNED.
+
+       PROCEDURE DIVISION USING BY REFERENCE OUT-ANSWER.
+
+           COMPUTE OUT-ANSWER = 42 *
+               FUNCTION RANDOM(FUNCTION CURRENT-DATE(1:16))
+
+          *> Speak some numbers using the voice synthesizer.
+           EVALUATE TRUE
+           WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
+               AND FUNCTION MOD(OUT-ANSWER, 5) = 0
+               CALL "speakSwift" USING BY REFERENCE
+                   C-FIZZBUZZ
+
+           WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
+               CALL "speakObjC" USING BY REFERENCE
+                   C-FIZZ
+
+           WHEN FUNCTION MOD(OUT-ANSWER, 5) = 0
+               CALL "SPEAK" USING BY REFERENCE
+                   C-BUZZ
+
+           END-EVALUATE
+           SET RETURN-CODE TO 1.
+
+       END PROGRAM ANSWER-TO-LIFE.

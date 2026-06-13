@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct CobolDemoApp: App {
+    init() {
+        cob_init(0, nil)
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
