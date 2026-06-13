@@ -6,6 +6,26 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1A0F61C02FDE0962008D05C3 /* GnuCOBOL-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0F61BF2FDE0962008D05C3 /* GnuCOBOL-iOS */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		1AFF3EC52FDE158800E73F56 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.cob";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).c",
+			);
+			script = "cobc -g -C \"${INPUT_FILE_PATH}\" -o \"${DERIVED_FILE_DIR}/${INPUT_FILE_BASE}.c\" --save-temps=\"${DERIVED_FILE_DIR}\"\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		1ACAAC372FDD98D80069F3A1 /* CobolDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobolDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -13,6 +33,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1ACAAC392FDD98D80069F3A1 /* CobolDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+				cobol/AnswerToLife.cob = sourcecode.c;
+			};
 			path = CobolDemo;
 			sourceTree = "<group>";
 		};
@@ -23,17 +46,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0F61C02FDE0962008D05C3 /* GnuCOBOL-iOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A0F611B2FDDD68D008D05C3 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		1ACAAC2E2FDD98D80069F3A1 = {
 			isa = PBXGroup;
 			children = (
 				1ACAAC392FDD98D80069F3A1 /* CobolDemo */,
 				1ACAAC382FDD98D80069F3A1 /* Products */,
+				1A0F611B2FDDD68D008D05C3 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +89,7 @@
 				1ACAAC352FDD98D80069F3A1 /* Resources */,
 			);
 			buildRules = (
+				1AFF3EC52FDE158800E73F56 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -65,6 +98,7 @@
 			);
 			name = CobolDemo;
 			packageProductDependencies = (
+				1A0F61BF2FDE0962008D05C3 /* GnuCOBOL-iOS */,
 			);
 			productName = CobolDemo;
 			productReference = 1ACAAC372FDD98D80069F3A1 /* CobolDemo.app */;
@@ -82,6 +116,7 @@
 				TargetAttributes = {
 					1ACAAC362FDD98D80069F3A1 = {
 						CreatedOnToolsVersion = 26.5;
+						LastSwiftMigration = 2650;
 					};
 				};
 			};
@@ -94,6 +129,9 @@
 			);
 			mainGroup = 1ACAAC2E2FDD98D80069F3A1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1A0F61BE2FDE0962008D05C3 /* XCRemoteSwiftPackageReference "cobol-mobile" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1ACAAC382FDD98D80069F3A1 /* Products */;
 			projectDirPath = "";
@@ -162,7 +200,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -184,6 +222,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CobolDemo/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -225,7 +264,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -240,6 +279,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "CobolDemo/Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -249,8 +289,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F5C7EM458Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -263,12 +305,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.coboldemo.CobolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -280,8 +324,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F5C7EM458Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -294,6 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.coboldemo.CobolDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -328,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A0F61BE2FDE0962008D05C3 /* XCRemoteSwiftPackageReference "cobol-mobile" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/caarmen/cobol-mobile";
+			requirement = {
+				branch = v0.0.3;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A0F61BF2FDE0962008D05C3 /* GnuCOBOL-iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A0F61BE2FDE0962008D05C3 /* XCRemoteSwiftPackageReference "cobol-mobile" */;
+			productName = "GnuCOBOL-iOS";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1ACAAC2F2FDD98D80069F3A1 /* Project object */;
 }
