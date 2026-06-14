@@ -19,12 +19,15 @@
            EVALUATE TRUE
            WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
                AND FUNCTION MOD(OUT-ANSWER, 5) = 0
-               DISPLAY C-FIZZBUZZ
+               CALL STATIC "speakSwift" USING BY REFERENCE
+                   C-FIZZBUZZ
 
            WHEN FUNCTION MOD(OUT-ANSWER, 3) = 0
-               DISPLAY C-FIZZ
+               CALL STATIC "speakSwift" USING BY REFERENCE
+                   C-FIZZ
            WHEN FUNCTION MOD(OUT-ANSWER, 5) = 0
-               DISPLAY C-BUZZ
+               CALL STATIC "speakSwift" USING BY REFERENCE
+                   C-BUZZ
            END-EVALUATE
            SET RETURN-CODE TO 1.
 
