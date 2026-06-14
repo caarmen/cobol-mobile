@@ -19,9 +19,15 @@ gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucob
 implementation(libs.gnucobol)
 ```
 
+See the example app in [examples/android/coboldemo](examples/android/coboldemo).
+
 ## iOS
 
 Add this repository as an SPM dependency `https://github.com/caarmen/cobol-mobile`.
+
+See [examples/ios/CobolDemo/doc/xcode-setup.md](examples/ios/CobolDemo/doc/xcode-setup.md) for some tips on building with COBOL in Xcode.
+
+See the example app in [examples/ios/CobolDemo](examples/ios/CobolDemo).
 
 
 ## Licensing
