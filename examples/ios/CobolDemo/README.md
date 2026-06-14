@@ -103,3 +103,6 @@ graph BT
 
 funcCob --> funciOS
 ```
+
+## XCode setup
+See [doc/xcode-setup.md](doc/xcode-setup.md) for some tips on building with COBOL in Xcode.
