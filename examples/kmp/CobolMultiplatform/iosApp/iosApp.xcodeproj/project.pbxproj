@@ -11,6 +11,22 @@
 		1A13E98F2FEC594900FE84EB /* AnswerToLife.cob in Sources */ = {isa = PBXBuildFile; fileRef = 1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		1A13E9902FEC598100FE84EB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.cob";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).c",
+			);
+			script = "cobc -g -C \"${INPUT_FILE_PATH}\" -o \"${DERIVED_FILE_DIR}/${INPUT_FILE_BASE}.c\" --save-temps=\"${DERIVED_FILE_DIR}\"\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */ = {isa = PBXFileReference; explicitFileType = sourcecode.c; path = AnswerToLife.cob; sourceTree = "<group>"; };
 		657D11B0B7CF94415430A85C /* CobileMultiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobileMultiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +110,7 @@
 				FDA14B2801C8E3F7C32AE55B /* Resources */,
 			);
 			buildRules = (
+				1A13E9902FEC598100FE84EB /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
