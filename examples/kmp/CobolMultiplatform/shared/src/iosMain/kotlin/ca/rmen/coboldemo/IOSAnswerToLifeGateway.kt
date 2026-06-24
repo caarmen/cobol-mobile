@@ -3,8 +3,12 @@
  */
 package ca.rmen.coboldemo
 
+import answer.answerToLife
+import kotlinx.cinterop.ExperimentalForeignApi
+
 class IOSAnswerToLifeGateway : AnswerToLifeGateway {
+    @OptIn(ExperimentalForeignApi::class)
     override fun getAnswerToLife(): Int {
-        return 33 // TODO
+        return answerToLife()
     }
 }
