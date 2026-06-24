@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1A13E98B2FEC46DF00FE84EB /* GnuCOBOL-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 1A13E98A2FEC46DF00FE84EB /* GnuCOBOL-iOS */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		657D11B0B7CF94415430A85C /* CobileMultiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobileMultiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A13E98B2FEC46DF00FE84EB /* GnuCOBOL-iOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,7 @@
 			);
 			name = iosApp;
 			packageProductDependencies = (
+				1A13E98A2FEC46DF00FE84EB /* GnuCOBOL-iOS */,
 			);
 			productName = iosApp;
 			productReference = 657D11B0B7CF94415430A85C /* CobileMultiplatform.app */;
@@ -114,6 +120,9 @@
 			);
 			mainGroup = 5A3F3B0B947EE3FF184637BA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1A13E9892FEC46DF00FE84EB /* XCRemoteSwiftPackageReference "cobol-mobile" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 65E034B04F6117AE835C2436 /* Products */;
 			projectDirPath = "";
@@ -368,6 +377,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1A13E9892FEC46DF00FE84EB /* XCRemoteSwiftPackageReference "cobol-mobile" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/caarmen/cobol-mobile";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A13E98A2FEC46DF00FE84EB /* GnuCOBOL-iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A13E9892FEC46DF00FE84EB /* XCRemoteSwiftPackageReference "cobol-mobile" */;
+			productName = "GnuCOBOL-iOS";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1BED8970F2F01BE0F686EB6D /* Project object */;
 }
