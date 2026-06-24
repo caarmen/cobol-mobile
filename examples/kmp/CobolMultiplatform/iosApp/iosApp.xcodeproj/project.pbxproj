@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A13E98B2FEC46DF00FE84EB /* GnuCOBOL-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 1A13E98A2FEC46DF00FE84EB /* GnuCOBOL-iOS */; };
+		1A13E98E2FEC58B600FE84EB /* AnswerToLife.cob in Resources */ = {isa = PBXBuildFile; fileRef = 1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */ = {isa = PBXFileReference; lastKnownFileType = text; path = AnswerToLife.cob; sourceTree = "<group>"; };
 		657D11B0B7CF94415430A85C /* CobileMultiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobileMultiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,9 +54,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A13E98D2FEC58B600FE84EB /* cobol */ = {
+			isa = PBXGroup;
+			children = (
+				1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */,
+			);
+			name = cobol;
+			path = ../shared/src/commonMain/cobol;
+			sourceTree = SOURCE_ROOT;
+		};
 		5A3F3B0B947EE3FF184637BA = {
 			isa = PBXGroup;
 			children = (
+				1A13E98D2FEC58B600FE84EB /* cobol */,
 				EAC26C80AB3795A3E8986AE2 /* Configuration */,
 				2911E802055F2FFF02A1D3A1 /* iosApp */,
 				65E034B04F6117AE835C2436 /* Products */,
@@ -138,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A13E98E2FEC58B600FE84EB /* AnswerToLife.cob in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
