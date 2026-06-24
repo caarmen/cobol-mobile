@@ -4,7 +4,14 @@
 package ca.rmen.coboldemo
 
 class AndroidAnswerToLifeGateway : AnswerToLifeGateway {
-    override fun getAnswerToLife(): Int {
-        return 2 // TODO
+    companion object {
+        init {
+            System.loadLibrary("answer")
+        }
     }
+    external fun cobAnswerToLife(): Int
+    override fun getAnswerToLife(): Int {
+        return cobAnswerToLife()
+    }
+
 }
