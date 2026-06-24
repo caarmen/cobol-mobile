@@ -12,7 +12,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */ = {isa = PBXFileReference; lastKnownFileType = text; path = AnswerToLife.cob; sourceTree = "<group>"; };
+		1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */ = {isa = PBXFileReference; explicitFileType = sourcecode.c; path = AnswerToLife.cob; sourceTree = "<group>"; };
 		657D11B0B7CF94415430A85C /* CobileMultiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobileMultiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
