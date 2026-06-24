@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -16,8 +17,17 @@ kotlin {
             baseName = "Shared"
             isStatic = true
         }
+        iosTarget.compilations.getByName("main") {
+            cinterops {
+                val answerToLife by creating {
+                    compilerOpts(
+                        "-I${project.rootDir}/shared/src/iosMain/cpp"
+                    )
+                }
+            }
+        }
     }
-    
+
     androidLibrary {
        namespace = "ca.rmen.coboldemo.shared"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
