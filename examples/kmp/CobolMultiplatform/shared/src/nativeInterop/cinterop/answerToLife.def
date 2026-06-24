@@ -1,0 +1,3 @@
+# https://kotlinlang.org/docs/native-definition-file.html#create-and-configure-a-definition-file
+headers = ExposeToKotlin.h
+package = answer
