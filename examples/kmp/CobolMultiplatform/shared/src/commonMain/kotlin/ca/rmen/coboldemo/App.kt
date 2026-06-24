@@ -20,8 +20,7 @@ import cobilemultiplatform.shared.generated.resources.Res
 import cobilemultiplatform.shared.generated.resources.compose_multiplatform
 
 @Composable
-@Preview
-fun App() {
+fun App(gateway: AnswerToLifeGateway) {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(
@@ -35,7 +34,7 @@ fun App() {
                 Text("Click me!")
             }
             AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
+                val greeting = remember { gateway.getAnswerToLife() }
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -46,4 +45,14 @@ fun App() {
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun AppPreview() {
+    App(
+        object : AnswerToLifeGateway {
+            override fun getAnswerToLife(): Int = 123
+        }
+    )
 }
