@@ -29,6 +29,15 @@ See [examples/ios/CobolDemo/doc/xcode-setup.md](examples/ios/CobolDemo/doc/xcode
 
 See the example app in [examples/ios/CobolDemo](examples/ios/CobolDemo).
 
+## Kotlin multiplatform
+
+Kotlin multiplatform example, where:
+
+* the cobol-mobile library isn't a kmp library (that's my next little project!).
+* the application is a kmp application with shared UI.
+
+See the example app in [examples/kmp/CobolMultiplatform](examples/kmp/CobolMultiplatform).
+
 
 ## Licensing
 The artifact is licensed under the LGPLv3 license ([COPYING.LIBRARY](COPYING.LIBRARY)).
