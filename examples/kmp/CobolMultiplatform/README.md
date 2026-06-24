@@ -1,24 +1,94 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# Cobol Mobile Kotlin multiplatform app demo
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+This project demonstrates how to communicate from kotlin to COBOL in a Kotlin multiplatform application,
+targeting Android and iOS.
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Note: cobol-mobile is not (yet!) available as a Kotlin multiplatform library.
 
-### Running the apps
+This example shows how to import:
+- the Android artifact from maven central
+- the iOS framework from the SPM package
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+## Demo
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+Everything is in one screen. This example is built on top of
+a [Kotlin multiplatform template](https://kmp.jetbrains.com/templates/).
 
----
+The screen has a button. Clicking on it will make a random number between 0 and 42 appear.
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+This is done by Kotlin code calling a COBOL procedure (via a JNI/C intermediary on Android, and c-interop on Kotlin).
+
+| Android                                                           | iOS                                                       |
+|-------------------------------------------------------------------|-----------------------------------------------------------|
+| <img height="400" src="doc/android.png" alt="android screenshot"> | <img height="400" src="doc/ios.png" alt="ios screenshot"> |
+
+## Architecture
+
+The UI is shared between Android and iOS.
+
+A "gateway" interface to call the COBOL prodedure is defined, and implemented
+by Android (using JNI) and iOS (using c-interop).
+
+The "gateway" implementation is injected into the `App` composable from each application's entry point:
+* Android: `MainActivity`.
+* iOS: `MainViewController`.
+
+This example is as simple as possible. In a real app (really? a real mobile app with COBOL?), you
+would likely:
+* Provide the gateway implementation using a dependency injection framework.
+* Have a viewmodel, and a a use case, so the UI wouldn't directly be calling the "gateway" into COBOL.
+
+```mermaid
+graph TD
+  subgraph commonMain
+    subgraph App.kt
+      app["App(gateway)"]
+    end
+    subgraph AnswerToLifeGateway.kt
+      igateway["AnswerToLifeGateway.getAnswerToLife()"]
+    end
+    subgraph sharedCobol["shared/src/commonMain/cobol"]
+      cob["ANSWER-TO-LIFE"]
+    end
+
+    app --> igateway
+  end
+
+  subgraph androidMain
+    subgraph AndroidAnswerToLifeGateway.kt
+      gatewayAndroid["AndroidAnswerToLifeGateway.getAnswerToLife()"]
+    end
+  end
+
+  subgraph androidCpp["androidApp/src/main/cpp"]
+    subgraph AnswerToLifeJni.c
+      jni["Java_ca_rmen_coboldemo_AndroidAnswerToLifeGateway_cobAnswerToLife"]
+    end
+  end
+
+  subgraph iosMain
+    subgraph IOSAnswerToLifeGateway.kt
+      gatewayIos["IOSAnswerToLifeGateway.getAnswerToLife()"]
+    end
+
+    subgraph ExposeToKotlin.h
+      kotlinheader["answerToLife()"]
+    end
+  end
+
+  subgraph iosBridge["iosApp/bridge"]
+    subgraph AnswerToLifeWrapper.c
+      wrapper["answerToLife()"]
+    end
+  end
+
+  igateway --> gatewayAndroid
+  gatewayAndroid --> jni
+  jni --> cob
+
+  igateway --> gatewayIos
+  kotlinheader --> wrapper
+  gatewayIos --> kotlinheader
+  wrapper --> cob
+```
+

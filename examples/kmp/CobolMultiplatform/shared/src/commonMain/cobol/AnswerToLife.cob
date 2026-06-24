@@ -1,0 +1,20 @@
+      *>======================================================================
+      *> ANSWER-TO-LIFE.
+      *>
+      *> Procedure which returns a random number from 0 to 42.
+      *>======================================================================
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. ANSWER-TO-LIFE.
+       DATA DIVISION.
+
+       LINKAGE SECTION.
+       01 OUT-ANSWER BINARY-SHORT UNSIGNED.
+
+       PROCEDURE DIVISION USING BY REFERENCE OUT-ANSWER.
+
+           COMPUTE OUT-ANSWER = 42 *
+               FUNCTION RANDOM(FUNCTION CURRENT-DATE(1:16))
+
+           SET RETURN-CODE TO 1.
+
+       END PROGRAM ANSWER-TO-LIFE.
