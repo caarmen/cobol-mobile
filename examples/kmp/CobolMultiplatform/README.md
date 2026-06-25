@@ -36,7 +36,7 @@ The "gateway" implementation is injected into the `App` composable from each app
 This example is as simple as possible. In a real app (really? a real mobile app with COBOL?), you
 would likely:
 * Provide the gateway implementation using a dependency injection framework.
-* Have a viewmodel, and a a use case, so the UI wouldn't directly be calling the "gateway" into COBOL.
+* Have a viewmodel, and a use case, so the UI wouldn't directly be calling the "gateway" into COBOL.
 
 ```mermaid
 graph TD
@@ -47,7 +47,7 @@ graph TD
     subgraph AnswerToLifeGateway.kt
       igateway["AnswerToLifeGateway.getAnswerToLife()"]
     end
-    subgraph sharedCobol["shared/src/commonMain/cobol"]
+    subgraph sharedCobol["AnswerToLife.cob"]
       cob["ANSWER-TO-LIFE"]
     end
 
