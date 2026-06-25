@@ -1,4 +1,4 @@
-rootProject.name = "CobileMultiplatform"
+rootProject.name = "CobolMultiplatform"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
