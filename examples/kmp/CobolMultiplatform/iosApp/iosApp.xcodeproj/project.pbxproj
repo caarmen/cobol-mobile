@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */ = {isa = PBXFileReference; explicitFileType = sourcecode.c; path = AnswerToLife.cob; sourceTree = "<group>"; };
-		657D11B0B7CF94415430A85C /* CobileMultiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobileMultiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		657D11B0B7CF94415430A85C /* CobolMultiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobolMultiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,7 +92,7 @@
 		65E034B04F6117AE835C2436 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				657D11B0B7CF94415430A85C /* CobileMultiplatform.app */,
+				657D11B0B7CF94415430A85C /* CobolMultiplatform.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,7 +122,7 @@
 				1A13E98A2FEC46DF00FE84EB /* GnuCOBOL-iOS */,
 			);
 			productName = iosApp;
-			productReference = 657D11B0B7CF94415430A85C /* CobileMultiplatform.app */;
+			productReference = 657D11B0B7CF94415430A85C /* CobolMultiplatform.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -229,6 +229,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.coboldemo.CobolMultiplatform;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iosApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -295,6 +296,8 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.rmen.coboldemo.CobolMultiplatform$(TEAM_ID)";
+				PRODUCT_NAME = CobolMultiplatform;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -324,6 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.coboldemo.CobolMultiplatform;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "iosApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -383,6 +387,8 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.rmen.coboldemo.CobolMultiplatform$(TEAM_ID)";
+				PRODUCT_NAME = CobolMultiplatform;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;

@@ -1,7 +1,7 @@
 TEAM_ID=
 
-PRODUCT_NAME=CobileMultiplatform
-PRODUCT_BUNDLE_IDENTIFIER=ca.rmen.coboldemo.CobileMultiplatform$(TEAM_ID)
+PRODUCT_NAME=CobolMultiplatform
+PRODUCT_BUNDLE_IDENTIFIER=ca.rmen.coboldemo.CobolMultiplatform$(TEAM_ID)
 
 CURRENT_PROJECT_VERSION=1
 MARKETING_VERSION=1.0
