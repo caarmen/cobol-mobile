@@ -1,8 +1,8 @@
+package ca.rmen.coboldemo
+
 /*
  * Implementation of the AnswerToLifeGateway interface for Android, calling into COBOL via JNI.
  */
-package ca.rmen.coboldemo
-
 class AndroidAnswerToLifeGateway : AnswerToLifeGateway {
     companion object {
         init {
@@ -15,3 +15,5 @@ class AndroidAnswerToLifeGateway : AnswerToLifeGateway {
     }
 
 }
+
+actual fun AnswerToLifeGateway(): AnswerToLifeGateway = AndroidAnswerToLifeGateway()

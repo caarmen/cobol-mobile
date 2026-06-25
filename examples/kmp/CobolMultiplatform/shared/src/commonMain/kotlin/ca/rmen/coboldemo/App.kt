@@ -17,7 +17,12 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun App(gateway: AnswerToLifeGateway) {
+fun App() {
+    App(AnswerToLifeGateway())
+}
+
+@Composable
+private fun App(gateway: AnswerToLifeGateway) {
     MaterialTheme {
         var greetingText by remember { mutableStateOf("Click the button to find out...") }
         Column(
@@ -49,9 +54,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun AppPreview() {
-    App(
-        object : AnswerToLifeGateway {
-            override fun getAnswerToLife(): Int = 123
-        }
-    )
+    App(object : AnswerToLifeGateway {
+        override fun getAnswerToLife(): Int = 123
+    })
 }
