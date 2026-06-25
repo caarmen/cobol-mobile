@@ -40,39 +40,40 @@ would likely:
 
 ```mermaid
 graph TD
-  subgraph commonMain
-    subgraph App.kt
-      app["App(gateway)"]
+  subgraph shared
+    subgraph commonMain
+      subgraph App.kt
+        app["App(gateway)"]
+      end
+      subgraph AnswerToLifeGateway.kt
+        igateway["AnswerToLifeGateway.getAnswerToLife()"]
+      end
+      subgraph sharedCobol["AnswerToLife.cob"]
+        cob["ANSWER-TO-LIFE"]
+      end
+  
+      app --> igateway
     end
-    subgraph AnswerToLifeGateway.kt
-      igateway["AnswerToLifeGateway.getAnswerToLife()"]
+  
+    subgraph androidMain
+      subgraph AndroidAnswerToLifeGateway.kt
+        gatewayAndroid["AndroidAnswerToLifeGateway.getAnswerToLife()"]
+      end
     end
-    subgraph sharedCobol["AnswerToLife.cob"]
-      cob["ANSWER-TO-LIFE"]
-    end
-
-    app --> igateway
-  end
-
-  subgraph androidMain
-    subgraph AndroidAnswerToLifeGateway.kt
-      gatewayAndroid["AndroidAnswerToLifeGateway.getAnswerToLife()"]
+    subgraph iosMain
+      subgraph IOSAnswerToLifeGateway.kt
+        gatewayIos["IOSAnswerToLifeGateway.getAnswerToLife()"]
+      end
+  
+      subgraph ExposeToKotlin.h
+        kotlinheader["answerToLife()"]
+      end
     end
   end
 
   subgraph androidCpp["androidApp/src/main/cpp"]
     subgraph AnswerToLifeJni.c
       jni["Java_ca_rmen_coboldemo_AndroidAnswerToLifeGateway_cobAnswerToLife"]
-    end
-  end
-
-  subgraph iosMain
-    subgraph IOSAnswerToLifeGateway.kt
-      gatewayIos["IOSAnswerToLifeGateway.getAnswerToLife()"]
-    end
-
-    subgraph ExposeToKotlin.h
-      kotlinheader["answerToLife()"]
     end
   end
 
