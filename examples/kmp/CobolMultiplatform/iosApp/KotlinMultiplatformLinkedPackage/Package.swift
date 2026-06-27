@@ -13,13 +13,13 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(path: "subpackages/io_github_kotlin_library_1_0_0")
+    .package(path: "subpackages/ca_rmen_gnucobol_kotlin_0_0_4")
   ],
   targets: [
     .target(
       name: "KotlinMultiplatformLinkedPackage",
       dependencies: [
-        .product(name: "io_github_kotlin_library_1_0_0", package: "io_github_kotlin_library_1_0_0")
+        .product(name: "ca_rmen_gnucobol_kotlin_0_0_4", package: "ca_rmen_gnucobol_kotlin_0_0_4")
       ]
     )
   ]

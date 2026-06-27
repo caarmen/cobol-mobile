@@ -56,6 +56,8 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+        }
+        iosMain.dependencies {
             implementation("ca.rmen:gnucobol-kotlin:0.0.4")
         }
         commonTest.dependencies {

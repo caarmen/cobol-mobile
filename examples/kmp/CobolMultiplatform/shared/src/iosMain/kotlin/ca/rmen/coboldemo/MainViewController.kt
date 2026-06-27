@@ -1,7 +1,7 @@
 package ca.rmen.coboldemo
 
 import androidx.compose.ui.window.ComposeUIViewController
-import gnucobol.cob_init
+import ca.rmen.gnucobol.cob_init
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.UIKit.UIViewController
 
