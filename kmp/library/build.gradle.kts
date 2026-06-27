@@ -16,7 +16,7 @@ version = "0.0.4"
 
 kotlin {
     androidLibrary {
-        namespace = "ca.rmen.gnucobol"
+        namespace = "ca.rmen.gnucobol.kmp"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 

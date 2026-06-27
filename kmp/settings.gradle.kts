@@ -15,6 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "gnucobol-kotlin-root"
+rootProject.name = "gnucobol-kmp-root"
 include(":library")
-project(":library").name = "gnucobol-kotlin"
+project(":library").name = "gnucobol-kmp"

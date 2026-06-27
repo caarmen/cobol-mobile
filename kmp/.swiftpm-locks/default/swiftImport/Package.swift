@@ -13,13 +13,13 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(path: "subpackages/_gnucobol-kotlin")
+    .package(path: "subpackages/_gnucobol-kmp")
   ],
   targets: [
     .target(
       name: "KotlinMultiplatformLinkedPackage",
       dependencies: [
-        .product(name: "_gnucobol-kotlin", package: "_gnucobol-kotlin")
+        .product(name: "_gnucobol-kmp", package: "_gnucobol-kmp")
       ]
     )
   ]
