@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -41,6 +42,15 @@ kotlin {
        withHostTest {
            isIncludeAndroidResources = true
        }
+    }
+
+    swiftPMDependencies {
+        @OptIn(ExperimentalKotlinGradlePluginApi::class)
+        swiftPackage(
+            url=url("https://github.com/caarmen/cobol-mobile"),
+            version=revision("v0.0.3"),
+            products=listOf(product(name="GnuCOBOL-iOS")),
+        )
     }
     
     sourceSets {
