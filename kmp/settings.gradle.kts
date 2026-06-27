@@ -13,5 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "multiplatform-library-template"
+rootProject.name = "gnucobol-kmp-root"
 include(":library")
+project(":library").name = "gnucobol-kmp"
