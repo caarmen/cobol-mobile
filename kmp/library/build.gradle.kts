@@ -10,17 +10,10 @@ group = "io.github.kotlin"
 version = "1.0.0"
 
 kotlin {
-    jvm()
     androidLibrary {
         namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
-
-        withJava() // enable java compilation support
-        withHostTestBuilder {}.configure {}
-        withDeviceTestBuilder {
-            sourceSetTreeName = "test"
-        }
 
         compilerOptions {
             jvmTarget = JvmTarget.JVM_11
@@ -28,16 +21,12 @@ kotlin {
     }
     iosArm64()
     iosSimulatorArm64()
-    linuxX64()
 
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
         }
 
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
-        }
     }
 }
 
