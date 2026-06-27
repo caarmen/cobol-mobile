@@ -18,7 +18,6 @@ dependencies {
 
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
-    implementation(libs.gnucobol)
 }
 
 android {
