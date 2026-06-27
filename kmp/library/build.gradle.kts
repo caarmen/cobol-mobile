@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -20,8 +21,33 @@ kotlin {
             jvmTarget = JvmTarget.JVM_11
         }
     }
-    iosArm64()
-    iosSimulatorArm64()
+    listOf(
+      iosArm64(),
+      iosSimulatorArm64()
+    ).forEach { iosTarget ->
+      iosTarget.binaries.framework {
+        baseName = "Shared"
+        isStatic = true
+      }
+      iosTarget.compilations.getByName("main") {
+        cinterops {
+          val gnuCobol by creating {
+            compilerOpts(
+              "-I${project.rootDir}/library/src/iosMain/cpp"
+            )
+          }
+        }
+      }
+    }
+
+    swiftPMDependencies {
+      @OptIn(ExperimentalKotlinGradlePluginApi::class)
+      swiftPackage(
+        url=url("https://github.com/caarmen/cobol-mobile"),
+        version=revision("v0.0.3"),
+        products=listOf(product(name="GnuCOBOL-iOS")),
+      )
+    }
 
     sourceSets {
         commonMain.dependencies {
