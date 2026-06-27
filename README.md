@@ -31,10 +31,28 @@ See the example app in [examples/ios/CobolDemo](examples/ios/CobolDemo).
 
 ## Kotlin multiplatform
 
-Kotlin multiplatform example, where:
+`settings.gradle.kts`:
+```kts
+dependencyResolutionManagement {
+    repositories {
+        maven(url = "https://caarmen.github.io/cobol-mobile")
+    }
+}
+```
 
-* the cobol-mobile library isn't a kmp library (that's my next little project!).
-* the application is a kmp application with shared UI.
+`gradle/libs.versions.toml`:
+```toml
+[versions]
+gnucobol-kmp = "0.0.4"
+
+[libraries]
+gnucobol-kmp = { group = "ca.rmen", name = "gnucobol-kmp", version.ref = "gnucobol-kmp" }
+```
+
+`shared/build.gradle.kts`:
+```kotlin
+implementation(libs.gnucobol.kmp)
+```
 
 See the example app in [examples/kmp/CobolMultiplatform](examples/kmp/CobolMultiplatform).
 
