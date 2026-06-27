@@ -1,18 +1,22 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import com.gradleup.librarian.gradle.Librarian
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
-    alias(libs.plugins.vanniktech.mavenPublish)
 }
 
+
+/*
 group = "ca.rmen"
 version = "0.0.4"
 
+ */
+
 kotlin {
     androidLibrary {
-        namespace = "ca.rmen.gnucobol-kotlin"
+        namespace = "ca.rmen.gnucobol"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 
@@ -59,6 +63,8 @@ kotlin {
     }
 }
 
+/*
+
 mavenPublishing {
     publishToMavenCentral()
 
@@ -90,3 +96,6 @@ mavenPublishing {
         }
     }
 }
+ */
+
+Librarian.module(project)

@@ -1,6 +1,7 @@
 [versions]
 agp = "9.1.0"
 kotlin = "2.4.0"
+librarian = "0.2.2-SNAPSHOT"
 android-minSdk = "24"
 android-compileSdk = "36"
 vanniktechMavenPublish = "0.36.0"
@@ -13,3 +14,5 @@ gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucob
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenPublish" }
+librarian = { id = "com.gradleup.librarian", version.ref = "librarian" }
+
