@@ -4,14 +4,15 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.vanniktech.mavenPublish)
+    id("maven-publish")
 }
 
-group = "io.github.kotlin"
-version = "1.0.0"
+group = "ca.rmen"
+version = "0.0.4"
 
 kotlin {
     androidLibrary {
-        namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+        namespace = "ca.rmen.gnucobol-kotlin"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 
@@ -33,33 +34,31 @@ kotlin {
 mavenPublishing {
     publishToMavenCentral()
 
-    signAllPublications()
-
-    coordinates(group.toString(), "library", version.toString())
+    coordinates(group.toString(), "gnucobol-kotlin", version.toString())
 
     pom {
-        name = "My library"
-        description = "A library."
-        inceptionYear = "2024"
-        url = "https://github.com/kotlin/multiplatform-library-template/"
+        name = "gnucobol-kotlin"
+        description = "GnuCOBOL port for kotlin multiplatform"
+        inceptionYear = "2026"
+        url = "https://github.com/caarmen/cobol-mobile"
         licenses {
             license {
-                name = "XXX"
-                url = "YYY"
-                distribution = "ZZZ"
+                name = "LGPLv3"
+                url = "https://www.gnu.org/licenses/lgpl-3.0.txt"
+                distribution = "repo"
             }
         }
         developers {
             developer {
-                id = "XXX"
-                name = "YYY"
-                url = "ZZZ"
+                id = "caarmen"
+                name = "Carmen Alvarez"
+                url = "https://github.com/caarmen"
             }
         }
         scm {
-            url = "XXX"
-            connection = "YYY"
-            developerConnection = "ZZZ"
+            url = "https://github.com/caarmen/cobol-mobile"
+            connection = "scm:git:git://github.com/caarmen/cobol-mobile.git"
+            developerConnection = "scm:git:ssh://github.com/caarmen/cobol-mobile.git"
         }
     }
 }
