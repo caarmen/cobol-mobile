@@ -50,6 +50,9 @@ kotlin {
     }
 
     sourceSets {
+        androidMain.dependencies {
+          implementation(libs.gnucobol)
+        }
         commonMain.dependencies {
             //put your multiplatform dependencies here
         }
