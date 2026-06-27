@@ -1,0 +1,120 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../gnucobol-kmp/0.0.4/gnucobol-kmp-0.0.4.module",
+    "group": "ca.rmen",
+    "module": "gnucobol-kmp",
+    "version": "0.0.4",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gnucobol-kmp-iosSimulatorArm64Main-0.0.4.klib",
+          "url": "gnucobol-kmp-iossimulatorarm64-0.0.4.klib",
+          "size": 4540,
+          "sha512": "5778d772b7a643c7f581eb71ca736f0f267bed33d11c8a6f843725946af27f6b8e6fd3c56f6ed8652414a65211a863584f3a0b89b8d8a4f72c7fbc5215a0c3e2",
+          "sha256": "afbc1b7712787f7424e13fb13b9ef025c9a62a0ab52f373015755e354efef8c3",
+          "sha1": "ab6e9c9e5def441304c6531c0438ca63ecf88a37",
+          "md5": "c885cbf5ae005d6fb02e8c1ed277b3aa"
+        },
+        {
+          "name": "gnucobol-kmp-iosSimulatorArm64Cinterop-gnuCobolMain-0.0.4.klib",
+          "url": "gnucobol-kmp-iossimulatorarm64-0.0.4-cinterop-gnuCobol.klib",
+          "size": 5645,
+          "sha512": "cab27ebeb90896136a5bfa4fef6d336c7006fe631799fa92011f3f512193b3afcb74d4362ba59203fc1d1df4046477e69d3a1cf34d84570af79c5e39a867d2f7",
+          "sha256": "60c7dbb340dd32082494b127cffc0602e46f860353a4c0d057b17ca6f769a60e",
+          "sha1": "1fd669ac928ce56525856c36bf79fc3e7885d917",
+          "md5": "937778030319ea2fae2afc6f5f53da2c"
+        },
+        {
+          "name": "gnucobol-kmp-iosSimulatorArm64Cinterop-swiftPMImportMain-0.0.4.klib",
+          "url": "gnucobol-kmp-iossimulatorarm64-0.0.4-cinterop-swiftPMImport.klib",
+          "size": 5908,
+          "sha512": "6a52fe2ce7b1720d32b996cd93d4e3439fbd2bd154d5d57c55be9207f7f9213e203ef1d9139bdd1c55496672437919977a23c2ec7553ef58b42a073b34306d63",
+          "sha256": "d72efdc311d3211ccbf3628dd60aa58ffe8776b4399547429bafa9e4d73578e8",
+          "sha1": "fd75a17262b61d3735aa5ff6e8beda8e5e283636",
+          "md5": "e1846653624cedc57606553ab8953b44"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "gnucobol-kmp-iossimulatorarm64-0.0.4-sources.jar",
+          "url": "gnucobol-kmp-iossimulatorarm64-0.0.4-sources.jar",
+          "size": 650,
+          "sha512": "b5e711b51859bb3b816c3339b73436c0fe6f0ea8b4a2b3187631ed9c7bcb1d9757830173214100f5a22607999743738a512ba8d3f8aca761cefd5d4dc1dff229",
+          "sha256": "e2ff6bd3cbedd38227dbcb334249c78e021d970fa811c50100939bebbd0d002a",
+          "sha1": "976aab3bb8b805938914fe06169e643171c3a227",
+          "md5": "40dcca783d1890ae6101e23afca4aef3"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gnucobol-kmp-iossimulatorarm64-0.0.4-metadata.jar",
+          "url": "gnucobol-kmp-iossimulatorarm64-0.0.4-metadata.jar",
+          "size": 28198,
+          "sha512": "481ac06b4dad8f704979d60e2d9576ecd9289216b33114cc73533348013591630cf85ac6f57ebcc5ad5ca55ec1cd5e7e8984cb70800b6e03ac88bbe9ebd5e5ae",
+          "sha256": "92ae5c1d7ad3b33961c517d6ed0cb5bbb76b6af9a1bfcf85f43f87786faf08db",
+          "sha1": "dd6da1eea711dda7ef1c56ac19fd83c6513921fe",
+          "md5": "d817642993679b49af7db11e815b13a7"
+        }
+      ]
+    }
+  ]
+}

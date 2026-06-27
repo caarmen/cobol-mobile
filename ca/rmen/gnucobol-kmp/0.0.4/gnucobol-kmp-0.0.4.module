@@ -1,0 +1,237 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "ca.rmen",
+    "module": "gnucobol-kmp",
+    "version": "0.0.4",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gnucobol-kmp-metadata-0.0.4.jar",
+          "url": "gnucobol-kmp-0.0.4.jar",
+          "size": 801,
+          "sha512": "ff6eb56ebc4e3b34d1d9030e0945e083d213d44e154c85be73312b95f64ab79e4d1855f3519c57026722eb5fdc10deb5604540216359539038aad6daf23d9690",
+          "sha256": "305854f2ae13ec934bd1d4481652e87c7811056e59711a3b41871c9649ea8d9b",
+          "sha1": "1f731a096657c8482279f1c233b4b2af633c0ae0",
+          "md5": "d56e550e5197764388a76cafe86ec263"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "gnucobol-kmp-kotlin-0.0.4-sources.jar",
+          "url": "gnucobol-kmp-0.0.4-sources.jar",
+          "size": 650,
+          "sha512": "b5e711b51859bb3b816c3339b73436c0fe6f0ea8b4a2b3187631ed9c7bcb1d9757830173214100f5a22607999743738a512ba8d3f8aca761cefd5d4dc1dff229",
+          "sha256": "e2ff6bd3cbedd38227dbcb334249c78e021d970fa811c50100939bebbd0d002a",
+          "sha1": "976aab3bb8b805938914fe06169e643171c3a227",
+          "md5": "40dcca783d1890ae6101e23afca4aef3"
+        }
+      ]
+    },
+    {
+      "name": "swiftPMDependenciesMetadataElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "swiftPMDependenciesMetadata"
+      },
+      "files": [
+        {
+          "name": "swiftPMDependenciesMetadata",
+          "url": "gnucobol-kmp-0.0.4-swiftpm-metadata.json",
+          "size": 829,
+          "sha512": "f3559cdbf8ab71c2f74a3df1fe21db6e825f6ed80f57fa72e19e6230f52940ab51f2f7b940db3cfd4343b206dc70713621e2d22e9c164bfd1edaf99c6b75dc60",
+          "sha256": "b9bd18a8a21fda349ec6dc5a30835e3a146744bd09be8f9577298afa57925830",
+          "sha1": "21ad3afb94520848b59d7bfea09d410e1d5e17ef",
+          "md5": "ea14dee795795a3fa15baac28691ea68"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-android/0.0.4/gnucobol-kmp-android-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-android",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-android/0.0.4/gnucobol-kmp-android-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-android",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-android/0.0.4/gnucobol-kmp-android-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-android",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-iosarm64/0.0.4/gnucobol-kmp-iosarm64-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-iosarm64",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-iosarm64/0.0.4/gnucobol-kmp-iosarm64-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-iosarm64",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-iosarm64/0.0.4/gnucobol-kmp-iosarm64-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-iosarm64",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-iossimulatorarm64/0.0.4/gnucobol-kmp-iossimulatorarm64-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-iossimulatorarm64",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-iossimulatorarm64/0.0.4/gnucobol-kmp-iossimulatorarm64-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-iossimulatorarm64",
+        "version": "0.0.4"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../gnucobol-kmp-iossimulatorarm64/0.0.4/gnucobol-kmp-iossimulatorarm64-0.0.4.module",
+        "group": "ca.rmen",
+        "module": "gnucobol-kmp-iossimulatorarm64",
+        "version": "0.0.4"
+      }
+    }
+  ]
+}
