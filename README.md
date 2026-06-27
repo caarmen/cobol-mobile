@@ -6,15 +6,15 @@ Port of GnuCOBOL for mobile platforms.
 
 The gnucobol-android artifact is available on maven central:
 
-`versions.toml`:
+`gradle/libs.versions.toml`:
 ```toml
 [versions]
 gnucobol = "0.0.2"
-#...
+
 [libraries]
 gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucobol" }
 ```
-`build.gradle.kts`:
+`app/build.gradle.kts`:
 ```
 implementation(libs.gnucobol)
 ```
