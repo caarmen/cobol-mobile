@@ -3,11 +3,7 @@
 This project demonstrates how to communicate from kotlin to COBOL in a Kotlin multiplatform application,
 targeting Android and iOS.
 
-Note: cobol-mobile is not (yet!) available as a Kotlin multiplatform library.
-
-This example shows how to import:
-- the Android artifact from maven central
-- the iOS framework from the SPM package
+This example uses the [kmp library](../../../kmp/).
 
 ## Demo
 
