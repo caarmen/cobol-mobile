@@ -1,0 +1,15 @@
+[versions]
+agp = "9.1.0"
+kotlin = "2.4.0"
+android-minSdk = "24"
+android-compileSdk = "36"
+vanniktechMavenPublish = "0.36.0"
+gnucobol = "0.0.2"
+
+[libraries]
+gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucobol" }
+
+[plugins]
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenPublish" }

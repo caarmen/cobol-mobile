@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "cobol-mobile",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/caarmen/cobol-mobile",
+      "state" : {
+        "branch" : "v0.0.3",
+        "revision" : "b115cbefd77a15a85c9542739c0dabf82e112c76"
+      }
+    }
+  ],
+  "version" : 2
+}
