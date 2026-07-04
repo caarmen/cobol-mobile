@@ -45,3 +45,6 @@ version="0.0.3"
 
 sed -e "s/__VERSION__/${version}/g;s/__SHA256_CHECKSUM__/${checksum}/g" \
   "${script_dir}/package/Package.swift.template" > "${script_dir}/../Package.swift"
+
+mkdir -p "${script_dir}/deps"
+cp "${target_framework}.zip" "${script_dir}/deps/".
