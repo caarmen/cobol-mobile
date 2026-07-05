@@ -1,8 +1,0 @@
-{
-    "export_libraries": [],
-    "library_name": "libcob",
-    "android": {
-      "library_name": "libcob",
-      "export_libraries": []
-    }
-}
