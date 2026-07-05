@@ -22,6 +22,8 @@ xcodebuild -create-xcframework \
   -headers "${HOME}"/.local/cobol-ios-arm64-apple-ios15.0-simulator/include \
   -output "${target_framework}"
 
+cp "${script_dir}/package/Headers/"* "${target_framework}"/ios-arm64/Headers
+cp "${script_dir}/package/Headers/"* "${target_framework}"/ios-arm64_x86_64-simulator/Headers
 rm "${output_dir}/libcob-all.a"
 
 pushd "${output_dir}" || exit
@@ -41,7 +43,7 @@ popd || exit
 echo "Computing SHA256 checksum..."
 checksum="$(shasum -a 256 "${target_framework}.zip" | awk '{print $1}')"
 
-version="0.0.3"
+version="0.0.5"
 
 sed -e "s/__VERSION__/${version}/g;s/__SHA256_CHECKSUM__/${checksum}/g" \
   "${script_dir}/package/Package.swift.template" > "${script_dir}/../Package.swift"

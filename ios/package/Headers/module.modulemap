@@ -1,0 +1,5 @@
+module GnuCOBOLCore {
+    header "GnuCOBOLCore.h"
+    link "xml2"
+    export *
+}
