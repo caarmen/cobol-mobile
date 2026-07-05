@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import GnuCOBOL
 
 @main
 struct CobolDemoApp: App {
     init() {
-        cob_init(0, nil)
+        GnuCOBOL.initialize()
     }
     var body: some Scene {
         WindowGroup {

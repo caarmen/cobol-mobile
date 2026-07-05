@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A0F61C02FDE0962008D05C3 /* GnuCOBOL-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0F61BF2FDE0962008D05C3 /* GnuCOBOL-iOS */; };
+		1A83BF5C2FF97C9700EF4222 /* GnuCOBOL-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 1A83BF5B2FF97C9700EF4222 /* GnuCOBOL-iOS */; };
+		1A83BF5F2FF97DDA00EF4222 /* GnuCOBOL-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 1A83BF5E2FF97DDA00EF4222 /* GnuCOBOL-iOS */; };
+		1AB104A12FFA981A005E28C5 /* GnuCOBOL-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 1AB104A02FFA981A005E28C5 /* GnuCOBOL-iOS */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -47,7 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A0F61C02FDE0962008D05C3 /* GnuCOBOL-iOS in Frameworks */,
+				1A83BF5C2FF97C9700EF4222 /* GnuCOBOL-iOS in Frameworks */,
+				1A83BF5F2FF97DDA00EF4222 /* GnuCOBOL-iOS in Frameworks */,
+				1AB104A12FFA981A005E28C5 /* GnuCOBOL-iOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +103,9 @@
 			);
 			name = CobolDemo;
 			packageProductDependencies = (
-				1A0F61BF2FDE0962008D05C3 /* GnuCOBOL-iOS */,
+				1A83BF5B2FF97C9700EF4222 /* GnuCOBOL-iOS */,
+				1A83BF5E2FF97DDA00EF4222 /* GnuCOBOL-iOS */,
+				1AB104A02FFA981A005E28C5 /* GnuCOBOL-iOS */,
 			);
 			productName = CobolDemo;
 			productReference = 1ACAAC372FDD98D80069F3A1 /* CobolDemo.app */;
@@ -131,7 +137,7 @@
 			mainGroup = 1ACAAC2E2FDD98D80069F3A1;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1A0F61BE2FDE0962008D05C3 /* XCRemoteSwiftPackageReference "cobol-mobile" */,
+				1AB1049F2FFA981A005E28C5 /* XCRemoteSwiftPackageReference "cobol-mobile" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1ACAAC382FDD98D80069F3A1 /* Products */;
@@ -380,20 +386,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1A0F61BE2FDE0962008D05C3 /* XCRemoteSwiftPackageReference "cobol-mobile" */ = {
+		1AB1049F2FFA981A005E28C5 /* XCRemoteSwiftPackageReference "cobol-mobile" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/caarmen/cobol-mobile";
 			requirement = {
-				branch = v0.0.3;
+				branch = v0.0.5;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1A0F61BF2FDE0962008D05C3 /* GnuCOBOL-iOS */ = {
+		1A83BF5B2FF97C9700EF4222 /* GnuCOBOL-iOS */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A0F61BE2FDE0962008D05C3 /* XCRemoteSwiftPackageReference "cobol-mobile" */;
+			productName = "GnuCOBOL-iOS";
+		};
+		1A83BF5E2FF97DDA00EF4222 /* GnuCOBOL-iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "GnuCOBOL-iOS";
+		};
+		1AB104A02FFA981A005E28C5 /* GnuCOBOL-iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AB1049F2FFA981A005E28C5 /* XCRemoteSwiftPackageReference "cobol-mobile" */;
 			productName = "GnuCOBOL-iOS";
 		};
 /* End XCSwiftPackageProductDependency section */
