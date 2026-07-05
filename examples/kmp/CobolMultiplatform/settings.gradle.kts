@@ -17,6 +17,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         maven(url="https://caarmen.github.io/cobol-mobile")
         google {
             mavenContent {
