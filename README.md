@@ -31,6 +31,8 @@ See the example app in [examples/ios/CobolDemo](examples/ios/CobolDemo).
 
 ## Kotlin multiplatform
 
+Kotlin 2.4.0 is required.
+
 `settings.gradle.kts`:
 ```kts
 dependencyResolutionManagement {
@@ -50,8 +52,9 @@ gnucobol-kmp = { group = "ca.rmen", name = "gnucobol-kmp", version.ref = "gnucob
 ```
 
 `shared/build.gradle.kts`:
+In `commonMain`:
 ```kotlin
-implementation(libs.gnucobol.kmp)
+api(libs.gnucobol.kmp)
 ```
 
 See the example app in [examples/kmp/CobolMultiplatform](examples/kmp/CobolMultiplatform).

@@ -10,7 +10,7 @@ number between 0 and 42 appear. This is done by Kotlin code calling
 a COBOL procedure (via a JNI/C intermediary).
 
 Then, depending on the number, a Toast will appear. This is done by
-COBOL calling out to AOSP's `Toast.makeText` api. A few variants of
+COBOL calling out to AOSP's `Toast.makeText` API. A few variants of
 this communication direction are demonstrated:
 
 | Number Divisible by  | Toast text | Demonstrates                                                                   |
@@ -22,6 +22,37 @@ this communication direction are demonstrated:
 <img alt="fizzbuzz" width="240" src="doc/fizzbuzz.png">
 
 ## Calling COBOL from Kotlin
+
+### Initialization
+
+Before running the `ANSWER-TO-LIFE` procedure, the GnuCOBOL runtime must be initialized. Specifically, the `cob_init` function defined in the GnuCOBOL runtime must be called.
+
+For this purpose, a kotlin wrapper is provided.
+
+```mermaid
+graph TD
+  subgraph application
+    MainActivity
+  end
+
+  subgraph androidlib[gnucobol-android library]
+    subgraph kotlinlayer[kotlin wrapper]
+      GnuCOBOL.initialize["GnuCOBOL.initialize()"]
+      cobInit["external fun cobInit()"]
+    end
+    Java_ca_rmen_gnucobol_GnuCOBOL_cobInit
+    subgraph clayer[C]
+        cob_init["libcob.so: cob_init()"]
+    end
+  end
+
+  MainActivity -->GnuCOBOL.initialize
+  GnuCOBOL.initialize -->cobInit
+  cobInit --> |jni| Java_ca_rmen_gnucobol_GnuCOBOL_cobInit
+  Java_ca_rmen_gnucobol_GnuCOBOL_cobInit --> cob_init
+```
+
+### ANSWER-TO-LIFE application procedure
 
 ```mermaid
 graph TD

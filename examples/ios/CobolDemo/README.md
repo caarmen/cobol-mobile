@@ -10,7 +10,7 @@ number between 0 and 42 appear. This is done by Swift code calling
 a COBOL procedure. 
 
 Then, depending on the number, a text may be spoken by the speech synthesizer. This is done by
-COBOL calling out to the AVFAudio framework's speech synthesizer apis. A few variants of
+COBOL calling out to the AVFAudio framework's speech synthesizer APIs. A few variants of
 this communication direction are demonstrated:
 
 | Number Divisible by  | Spoken text | Demonstrates                                                                   |
@@ -22,6 +22,33 @@ this communication direction are demonstrated:
 <img alt="fizzbuzz" width="240" src="doc/fizzbuzz.png">
 
 ## Calling COBOL from Swift
+
+### Initialization
+Before running the `ANSWER-TO-LIFE` procedure, the GnuCOBOL runtime must be initialized. Specifically, the `cob_init` function defined in the GnuCOBOL runtime must be called.
+
+For this purpose, a swift wrapper is provided.
+
+```mermaid
+graph TD
+  subgraph application
+    CobolDemoApp
+  end
+
+  subgraph ioslib[GnuCOBOL-ios package]
+
+    subgraph swiftlayer[GnuCOBOL - swift wrapper target]
+      GnuCOBOL.initialize["GnuCOBOL.initialize()"]
+    end
+    subgraph clayer[GnuCOBOLCore - framework target]
+        cob_init["libcob.a: cob_init()"]
+    end
+  end
+
+  CobolDemoApp -->GnuCOBOL.initialize
+  GnuCOBOL.initialize -->|modulemap| cob_init
+```
+
+### ANSWER-TO-LIFE application procedure
 
 ```mermaid
 graph TD
@@ -106,3 +133,4 @@ funcCob --> funciOS
 
 ## XCode setup
 See [doc/xcode-setup.md](doc/xcode-setup.md) for some tips on building with COBOL in Xcode.
+

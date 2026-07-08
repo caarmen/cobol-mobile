@@ -1,9 +1,20 @@
 # Xcode setup for COBOL
 
+## Dependency
+
+### Without Kotlin multiplatform
 Add this repository as a dependency: `https://github.com/caarmen/cobol-mobile`.
 <img src="xcode-dependency.png">
 
+### With Kotlin multiplatform
 
+Add the dependency to your shared `build.gradle.kts` as indicated in the top-level [README.md](../../../../README.md).
+
+Assuming your ios Application is in the `iosApp` folder:
+
+Run `XCODEPROJ_PATH="$(pwd)/iosApp/iosApp.xcodeproj" ./gradlew :shared:integrateLinkagePackage`
+
+## Compiling your own COBOL source code
 When adding a COBOL source file to your project:
 * In the left pane, in the project tree, select the file. In the right pane:
   - Set the type to "C Source".
