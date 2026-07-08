@@ -34,6 +34,73 @@ would likely:
 * Provide the gateway implementation using a dependency injection framework.
 * Have a viewmodel, and a use case, so the UI wouldn't directly be calling the "gateway" into COBOL.
 
+### Initialization
+
+Before running the `ANSWER-TO-LIFE` procedure, the GnuCOBOL runtime must be initialized. Specifically, the `cob_init` function defined in the GnuCOBOL runtime must be called.
+
+In this KMP application, we use a kotlin api `GnuCOBOL.initialize()` exposed by the KMP library.
+
+The implementation of `GnuCOBOL.initialize()` depends on the platform:
+- For Android, it calls into the gnucobol-android library, which calls through to `cob_init` via a JNI layer.
+- For iOS, it calls into `cob_init` function exposed by the GnuCOBOL-ios package. The swift layer isn't used by the KMP library. Direct calls from Kotlin to Swift aren't currently possible. An additional Objective-C layer would be required. Instead, the KMP library directly accesses the `cob_init` C function via c-interop. The swift layer is relevant for an iOS app not using kotlin multiplatform. See the [ios example](../../ios/CobolDemo).
+
+```mermaid
+graph TD
+  subgraph application
+    subgraph commonMain
+      app["App"]
+    end
+  end
+
+  subgraph kmplib[gnucobol-kmp library]
+    subgraph shared
+      subgraph commonMainlib[commonMain]
+        GnuCOBOL.initializekmp["GnuCOBOL.initialize()"]
+        initializeImpl["expect fun initializeImpl()"]
+      end
+      subgraph androidMain
+        initializeImplAndroid["actual fun initializeImpl()"]
+      end
+      subgraph iosMain
+        initializeImplIos["actual fun initializeImpl()"]
+      end
+    end
+  end
+  subgraph androidlib[gnucobol-android library]
+    subgraph kotlinlayer[kotlin wrapper]
+      GnuCOBOL.initializeandroid["GnuCOBOL.initialize()"]
+      cobInit["external fun cobInit()"]
+    end
+    Java_ca_rmen_gnucobol_GnuCOBOL_cobInit
+    subgraph clayerandroid[C]
+        cob_initandroid["libcob.so: cob_init()"]
+    end
+  end
+  subgraph ioslib[GnuCOBOL-ios package]
+    subgraph swiftlayer["`*GnuCOBOL - swift wrapper (unused)*`"]
+      GnuCOBOL.initializeios["`*GnuCOBOL.initialize()*`"]
+    end
+    style swiftlayer stroke-dasharray: 5 5
+    subgraph clayerios[GnuCOBOLCore - framework target]
+      cob_initios["libcob.a: cob_init()"]
+    end
+  end
+  
+  app --> GnuCOBOL.initializekmp
+  GnuCOBOL.initializekmp --> initializeImpl
+  initializeImpl --> initializeImplAndroid
+  initializeImplAndroid --> GnuCOBOL.initializeandroid
+  GnuCOBOL.initializeandroid -->cobInit
+  cobInit --> |jni|Java_ca_rmen_gnucobol_GnuCOBOL_cobInit
+  Java_ca_rmen_gnucobol_GnuCOBOL_cobInit --> cob_initandroid
+
+  initializeImpl --> initializeImplIos
+  initializeImplIos --> |c-interop|cob_initios
+  GnuCOBOL.initializeios -.-> |"`*modulemap*`"|cob_initios
+```
+
+### ANSWER-TO-LIFE application procedure
+
 ```mermaid
 graph TD
   subgraph shared

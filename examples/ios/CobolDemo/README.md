@@ -23,6 +23,33 @@ this communication direction are demonstrated:
 
 ## Calling COBOL from Swift
 
+### Initialization
+Before running the `ANSWER-TO-LIFE` procedure, the GnuCOBOL runtime must be initialized. Specifically, the `cob_init` function defined in the GnuCOBOL runtime must be called.
+
+For this purpose, a swift wrapper is provided.
+
+```mermaid
+graph TD
+  subgraph application
+    CobolDemoApp
+  end
+
+  subgraph ioslib[GnuCOBOL-ios package]
+
+    subgraph swiftlayer[GnuCOBOL - swift wrapper target]
+      GnuCOBOL.initialize["GnuCOBOL.initialize()"]
+    end
+    subgraph clayer[GnuCOBOLCore - framework target]
+        cob_init["libcob.a: cob_init()"]
+    end
+  end
+
+  CobolDemoApp -->GnuCOBOL.initialize
+  GnuCOBOL.initialize -->|modulemap| cob_init
+```
+
+### ANSWER-TO-LIFE application procedure
+
 ```mermaid
 graph TD
   ContentView[ContentView.swift]
