@@ -1,0 +1,43 @@
+name: build
+on: workflow_dispatch
+
+jobs:
+  build-android-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Setup GnuCOBOL
+        run: sudo apt-get install gnucobol3
+
+      - name: Build android example
+        run: |
+          cd examples/android/coboldemo
+          ./gradlew assembleDebug
+
+      - name: Upload android example apk
+        uses: actions/upload-artifact@v7
+        with:
+          name: android-example.apk
+          path: ./examples/android/coboldemo/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Build android kmp example
+        run: |
+          cd examples/kmp/CobolMultiplatform
+          ./gradlew :androidApp:assembleDebug
+
+      - name: Upload android kmp example apk
+        uses: actions/upload-artifact@v7
+        with:
+          name: android-kmp-example.apk
+          path: ./examples/kmp/CobolMultiplatform/androidApp/build/outputs/apk/debug/androidApp-debug.apk
+
