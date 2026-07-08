@@ -22,7 +22,7 @@ dependencyResolutionManagement {
 `gradle/libs.versions.toml`:
 ```toml
 [versions]
-gnucobol-kmp = "0.0.4"
+gnucobol-kmp = "0.0.5"
 
 [libraries]
 gnucobol-kmp = { group = "ca.rmen", name = "gnucobol-kmp", version.ref = "gnucobol-kmp" }

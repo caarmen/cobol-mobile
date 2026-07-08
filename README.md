@@ -9,7 +9,7 @@ The gnucobol-android artifact is available on maven central:
 `gradle/libs.versions.toml`:
 ```toml
 [versions]
-gnucobol = "0.0.2"
+gnucobol = "0.0.5"
 
 [libraries]
 gnucobol = { group = "ca.rmen", name = "gnucobol-android", version.ref = "gnucobol" }
@@ -45,7 +45,7 @@ dependencyResolutionManagement {
 `gradle/libs.versions.toml`:
 ```toml
 [versions]
-gnucobol-kmp = "0.0.4"
+gnucobol-kmp = "0.0.5"
 
 [libraries]
 gnucobol-kmp = { group = "ca.rmen", name = "gnucobol-kmp", version.ref = "gnucobol-kmp" }
