@@ -38,7 +38,7 @@ would likely:
 
 Before running the `ANSWER-TO-LIFE` procedure, the GnuCOBOL runtime must be initialized. Specifically, the `cob_init` function defined in the GnuCOBOL runtime must be called.
 
-In this KMP application, we use a kotlin api `GnuCOBOL.initialize()` exposed by the KMP library.
+In this KMP application, we use a kotlin API `GnuCOBOL.initialize()` exposed by the KMP library.
 
 The implementation of `GnuCOBOL.initialize()` depends on the platform:
 - For Android, it calls into the gnucobol-android library, which calls through to `cob_init` via a JNI layer.

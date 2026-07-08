@@ -10,7 +10,7 @@ number between 0 and 42 appear. This is done by Swift code calling
 a COBOL procedure. 
 
 Then, depending on the number, a text may be spoken by the speech synthesizer. This is done by
-COBOL calling out to the AVFAudio framework's speech synthesizer apis. A few variants of
+COBOL calling out to the AVFAudio framework's speech synthesizer APIs. A few variants of
 this communication direction are demonstrated:
 
 | Number Divisible by  | Spoken text | Demonstrates                                                                   |
@@ -133,3 +133,4 @@ funcCob --> funciOS
 
 ## XCode setup
 See [doc/xcode-setup.md](doc/xcode-setup.md) for some tips on building with COBOL in Xcode.
+

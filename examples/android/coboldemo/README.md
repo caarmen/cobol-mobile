@@ -10,7 +10,7 @@ number between 0 and 42 appear. This is done by Kotlin code calling
 a COBOL procedure (via a JNI/C intermediary).
 
 Then, depending on the number, a Toast will appear. This is done by
-COBOL calling out to AOSP's `Toast.makeText` api. A few variants of
+COBOL calling out to AOSP's `Toast.makeText` API. A few variants of
 this communication direction are demonstrated:
 
 | Number Divisible by  | Toast text | Demonstrates                                                                   |
