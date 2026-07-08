@@ -41,3 +41,41 @@ jobs:
           name: android-kmp-example.apk
           path: ./examples/kmp/CobolMultiplatform/androidApp/build/outputs/apk/debug/androidApp-debug.apk
 
+  build-ios-examples:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Setup GnuCOBOL
+        run: brew install gnucobol
+
+      - name: Build ios example
+        run: |
+          cd examples/ios/CobolDemo
+          xcodebuild -project CobolDemo.xcodeproj -scheme CobolDemo -destination 'platform=iOS Simulator,name=iPhone 17' CONFIGURATION_BUILD_DIR="$(pwd)/build/app" build
+
+      - name: Upload ios example app
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-example.app
+          path: examples/ios/CobolDemo/build/app/CobolDemo.app
+
+      - name: Build ios kmp example
+        run: |
+          cd examples/kmp/CobolMultiplatform
+          xcodebuild -project iosApp/iosApp.xcodeproj -scheme iosApp -destination 'platform=iOS Simulator,name=iPhone 17' CONFIGURATION_BUILD_DIR="$(pwd)/build/app" build
+
+      - name: Upload ios kmp example app
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-kmp-example.app
+          path: examples/kmp/CobolMultiplatform/build/app/CobolMultiplatform.app
