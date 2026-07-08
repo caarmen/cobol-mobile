@@ -14,10 +14,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import ca.rmen.gnucobol.kmp.GnuCOBOL
 
 
 @Composable
 fun App() {
+    // In reality, this type of initialization call might be better
+    // suited in app startup, which would be specific to Android and iOS.
+    // We put it here just to demonstrate an example of calling COBOL code
+    // from shared kmp code (commonMain).
+    remember { GnuCOBOL.initialize() }
     App(AnswerToLifeGateway())
 }
 

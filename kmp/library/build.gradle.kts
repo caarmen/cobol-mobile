@@ -11,7 +11,7 @@ group = "ca.rmen"
 version = "0.0.5"
 
 kotlin {
-    androidLibrary {
+    android {
         namespace = "ca.rmen.gnucobol.kmp"
         compileSdk {
             version = release(37) {
