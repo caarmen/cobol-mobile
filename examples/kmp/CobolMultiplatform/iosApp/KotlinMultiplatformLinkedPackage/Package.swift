@@ -13,13 +13,13 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(path: "subpackages/ca_rmen_gnucobol_kmp_0_0_4")
+    .package(path: "subpackages/ca_rmen_gnucobol_kmp_0_0_5")
   ],
   targets: [
     .target(
       name: "KotlinMultiplatformLinkedPackage",
       dependencies: [
-        .product(name: "ca_rmen_gnucobol_kmp_0_0_4", package: "ca_rmen_gnucobol_kmp_0_0_4")
+        .product(name: "ca_rmen_gnucobol_kmp_0_0_5", package: "ca_rmen_gnucobol_kmp_0_0_5")
       ]
     )
   ]

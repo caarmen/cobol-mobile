@@ -10,11 +10,11 @@ let localFrameworkAbsolutePath = URL(fileURLWithPath: #filePath)
 
 let frameworkTarget = FileManager.default.fileExists(atPath: localFrameworkAbsolutePath) ?
     Target.binaryTarget(
-        name: "GnuCOBOL",
+        name: "GnuCOBOLCore",
         path: localFrameworkRelativePath
     ) :
     Target.binaryTarget(
-        name: "GnuCOBOL",
+        name: "GnuCOBOLCore",
         url: "https://github.com/caarmen/cobol-mobile/releases/download/v__VERSION__/GnuCOBOL.xcframework.zip",
         checksum: "__SHA256_CHECKSUM__"
     )
@@ -23,9 +23,24 @@ let package = Package(
     name: "GnuCOBOL-iOS",
     platforms: [.iOS(.v15)],
     products: [
-        .library(name: "GnuCOBOL-iOS", targets: ["GnuCOBOL"])
+        .library(
+            name: "GnuCOBOL-iOS",
+            targets: [
+                "GnuCOBOLCore",
+                "GnuCOBOL"
+            ]
+        )
     ],
     targets: [
-        frameworkTarget
+        frameworkTarget,
+        .target(
+            name: "GnuCOBOL",
+            dependencies:[
+                .target(name: "GnuCOBOLCore")
+            ],
+            path: "ios/GnuCOBOL",
+            sources: ["Sources"],
+            swiftSettings: [.interoperabilityMode(.C)]
+        ),
     ]
 )

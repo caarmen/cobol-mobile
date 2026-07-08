@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "ca.rmen"
-version = "0.0.4"
+version = "0.0.5"
 
 kotlin {
     androidLibrary {
@@ -43,7 +43,7 @@ kotlin {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         swiftPackage(
             url = url("https://github.com/caarmen/cobol-mobile"),
-            version = revision("v0.0.3"),
+            version = revision("v0.0.5"),
             products = listOf(product(name = "GnuCOBOL-iOS")),
         )
     }

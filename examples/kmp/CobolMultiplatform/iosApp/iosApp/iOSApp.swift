@@ -1,9 +1,10 @@
 import SwiftUI
+import GnuCOBOL
 
 @main
 struct iOSApp: App {
 	init() {
-		cob_init(0, nil)
+		GnuCOBOL.initialize()
 	}
     var body: some Scene {
         WindowGroup {

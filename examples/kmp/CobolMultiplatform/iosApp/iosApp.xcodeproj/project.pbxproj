@@ -7,18 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A13E98F2FEC594900FE84EB = {
-			isa = PBXBuildFile;
-			fileRef = 1A13E98C2FEC58B600FE84EB;
-		};
-		A91BB60A38B9A8619FD08104 = {
-			isa = PBXBuildFile;
-			productRef = 0FB9C581733819B47FB54349;
-		};
+		1A13E98F2FEC594900FE84EB /* AnswerToLife.cob in Sources */ = {isa = PBXBuildFile; fileRef = 1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */; };
+		A91BB60A38B9A8619FD08104 /* KotlinMultiplatformLinkedPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 0FB9C581733819B47FB54349 /* KotlinMultiplatformLinkedPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
-		1A13E9902FEC598100FE84EB = {
+		1A13E9902FEC598100FE84EB /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			filePatterns = "*.cob";
@@ -34,41 +28,30 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		1A13E98C2FEC58B600FE84EB = {
-			isa = PBXFileReference;
-			explicitFileType = sourcecode.c;
-			path = AnswerToLife.cob;
-			sourceTree = "<group>";
-		};
-		657D11B0B7CF94415430A85C = {
-			isa = PBXFileReference;
-			explicitFileType = wrapper.application;
-			includeInIndex = 0;
-			path = CobolMultiplatform.app;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
+		1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */ = {isa = PBXFileReference; explicitFileType = sourcecode.c; path = AnswerToLife.cob; sourceTree = "<group>"; };
+		657D11B0B7CF94415430A85C /* CobolMultiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CobolMultiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		6E317FBB6616AFEFCB753AE0 = {
+		6E317FBB6616AFEFCB753AE0 /* Exceptions for "iosApp" folder in "iosApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 99EB7F431543D5E783C3444F;
+			target = 99EB7F431543D5E783C3444F /* iosApp */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2911E802055F2FFF02A1D3A1 = {
+		2911E802055F2FFF02A1D3A1 /* iosApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				6E317FBB6616AFEFCB753AE0,
+				6E317FBB6616AFEFCB753AE0 /* Exceptions for "iosApp" folder in "iosApp" target */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
 		};
-		EAC26C80AB3795A3E8986AE2 = {
+		EAC26C80AB3795A3E8986AE2 /* Configuration */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Configuration;
 			sourceTree = "<group>";
@@ -76,21 +59,21 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		29F0BEC40964986F0FD38DB8 = {
+		29F0BEC40964986F0FD38DB8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91BB60A38B9A8619FD08104,
+				A91BB60A38B9A8619FD08104 /* KotlinMultiplatformLinkedPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A13E98D2FEC58B600FE84EB = {
+		1A13E98D2FEC58B600FE84EB /* cobol */ = {
 			isa = PBXGroup;
 			children = (
-				1A13E98C2FEC58B600FE84EB,
+				1A13E98C2FEC58B600FE84EB /* AnswerToLife.cob */,
 			);
 			name = cobol;
 			path = ../shared/src/commonMain/cobol;
@@ -99,17 +82,17 @@
 		5A3F3B0B947EE3FF184637BA = {
 			isa = PBXGroup;
 			children = (
-				1A13E98D2FEC58B600FE84EB,
-				EAC26C80AB3795A3E8986AE2,
-				2911E802055F2FFF02A1D3A1,
-				65E034B04F6117AE835C2436,
+				1A13E98D2FEC58B600FE84EB /* cobol */,
+				EAC26C80AB3795A3E8986AE2 /* Configuration */,
+				2911E802055F2FFF02A1D3A1 /* iosApp */,
+				65E034B04F6117AE835C2436 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		65E034B04F6117AE835C2436 = {
+		65E034B04F6117AE835C2436 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				657D11B0B7CF94415430A85C,
+				657D11B0B7CF94415430A85C /* CobolMultiplatform.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,35 +100,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		99EB7F431543D5E783C3444F = {
+		99EB7F431543D5E783C3444F /* iosApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9AAF9DAB4F86BD26C5242B00;
+			buildConfigurationList = 9AAF9DAB4F86BD26C5242B00 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
-				FDF47593ABDE2437B61E90C3,
-				B9FBE2361207E8B3817FD5DD,
-				29F0BEC40964986F0FD38DB8,
-				FDA14B2801C8E3F7C32AE55B,
+				FDF47593ABDE2437B61E90C3 /* Compile Kotlin Framework */,
+				B9FBE2361207E8B3817FD5DD /* Sources */,
+				29F0BEC40964986F0FD38DB8 /* Frameworks */,
+				FDA14B2801C8E3F7C32AE55B /* Resources */,
 			);
 			buildRules = (
-				1A13E9902FEC598100FE84EB,
+				1A13E9902FEC598100FE84EB /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2911E802055F2FFF02A1D3A1,
+				2911E802055F2FFF02A1D3A1 /* iosApp */,
 			);
 			name = iosApp;
 			packageProductDependencies = (
-				0FB9C581733819B47FB54349,
+				0FB9C581733819B47FB54349 /* KotlinMultiplatformLinkedPackage */,
 			);
 			productName = iosApp;
-			productReference = 657D11B0B7CF94415430A85C;
+			productReference = 657D11B0B7CF94415430A85C /* CobolMultiplatform.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1BED8970F2F01BE0F686EB6D = {
+		1BED8970F2F01BE0F686EB6D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
@@ -157,7 +140,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3B9EF909EB4C3DB052129585;
+			buildConfigurationList = 3B9EF909EB4C3DB052129585 /* Build configuration list for PBXProject "iosApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -167,20 +150,20 @@
 			mainGroup = 5A3F3B0B947EE3FF184637BA;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				047FE2991DD23AC695FAA434,
+				047FE2991DD23AC695FAA434 /* XCLocalSwiftPackageReference "KotlinMultiplatformLinkedPackage" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 65E034B04F6117AE835C2436;
+			productRefGroup = 65E034B04F6117AE835C2436 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99EB7F431543D5E783C3444F,
+				99EB7F431543D5E783C3444F /* iosApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FDA14B2801C8E3F7C32AE55B = {
+		FDA14B2801C8E3F7C32AE55B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -190,7 +173,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FDF47593ABDE2437B61E90C3 = {
+		FDF47593ABDE2437B61E90C3 /* Compile Kotlin Framework */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -212,18 +195,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B9FBE2361207E8B3817FD5DD = {
+		B9FBE2361207E8B3817FD5DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A13E98F2FEC594900FE84EB,
+				1A13E98F2FEC594900FE84EB /* AnswerToLife.cob in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		0CAA59E13CB7C5422DC505D4 = {
+		0CAA59E13CB7C5422DC505D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -248,15 +231,14 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.coboldemo.CobolMultiplatform;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "iosApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		AFB07F158D099890BFF81B2D = {
+		AFB07F158D099890BFF81B2D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = EAC26C80AB3795A3E8986AE2;
+			baseConfigurationReferenceAnchor = EAC26C80AB3795A3E8986AE2 /* Configuration */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,7 +303,7 @@
 			};
 			name = Debug;
 		};
-		B8289E3A1507B3C9DDA6BD41 = {
+		B8289E3A1507B3C9DDA6BD41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -346,15 +328,14 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.rmen.coboldemo.CobolMultiplatform;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "iosApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F0A638FA5E22315EE341E262 = {
+		F0A638FA5E22315EE341E262 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = EAC26C80AB3795A3E8986AE2;
+			baseConfigurationReferenceAnchor = EAC26C80AB3795A3E8986AE2 /* Configuration */;
 			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -415,20 +396,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B9EF909EB4C3DB052129585 = {
+		3B9EF909EB4C3DB052129585 /* Build configuration list for PBXProject "iosApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AFB07F158D099890BFF81B2D,
-				F0A638FA5E22315EE341E262,
+				AFB07F158D099890BFF81B2D /* Debug */,
+				F0A638FA5E22315EE341E262 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9AAF9DAB4F86BD26C5242B00 = {
+		9AAF9DAB4F86BD26C5242B00 /* Build configuration list for PBXNativeTarget "iosApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8289E3A1507B3C9DDA6BD41,
-				0CAA59E13CB7C5422DC505D4,
+				B8289E3A1507B3C9DDA6BD41 /* Debug */,
+				0CAA59E13CB7C5422DC505D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -436,18 +417,18 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		047FE2991DD23AC695FAA434 = {
+		047FE2991DD23AC695FAA434 /* XCLocalSwiftPackageReference "KotlinMultiplatformLinkedPackage" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = KotlinMultiplatformLinkedPackage;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0FB9C581733819B47FB54349 = {
+		0FB9C581733819B47FB54349 /* KotlinMultiplatformLinkedPackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KotlinMultiplatformLinkedPackage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 1BED8970F2F01BE0F686EB6D;
+	rootObject = 1BED8970F2F01BE0F686EB6D /* Project object */;
 }

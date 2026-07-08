@@ -15,7 +15,7 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/caarmen/cobol-mobile",
-      revision: "v0.0.3"
+      revision: "v0.0.5"
     )
   ],
   targets: [

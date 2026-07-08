@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/caarmen/cobol-mobile",
       "state" : {
-        "branch" : "v0.0.3",
-        "revision" : "b115cbefd77a15a85c9542739c0dabf82e112c76"
+        "branch" : "v0.0.5",
+        "revision" : "22b3fa71800fab682e660822d394d427c5732e17"
       }
     }
   ],
