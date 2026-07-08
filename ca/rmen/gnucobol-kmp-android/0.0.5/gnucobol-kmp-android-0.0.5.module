@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../gnucobol-kmp/0.0.5/gnucobol-kmp-0.0.5.module",
+    "group": "ca.rmen",
+    "module": "gnucobol-kmp",
+    "version": "0.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "ca.rmen",
+          "module": "gnucobol-android",
+          "version": {
+            "requires": "0.0.5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gnucobol-kmp.aar",
+          "url": "gnucobol-kmp-android-0.0.5.aar",
+          "size": 2119,
+          "sha512": "29654553dc4feb54fd811186b2ee5d30bad4f28792c32a4a032dc55654e9a88149f9327cee3f7a0000c5f46b3c8520765db3a3bcaaa6a1761b993563249f213c",
+          "sha256": "1c50ae6f88e7528619302598cb2399549b76b9ac38dfbde102d26b88da1583a9",
+          "sha1": "28658f03de31822b8e7dd3a1d854d91bf56e1095",
+          "md5": "ab512827eca3fbdd7ddbc9714bcdf6fc"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "ca.rmen",
+          "module": "gnucobol-android",
+          "version": {
+            "requires": "0.0.5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gnucobol-kmp.aar",
+          "url": "gnucobol-kmp-android-0.0.5.aar",
+          "size": 2119,
+          "sha512": "29654553dc4feb54fd811186b2ee5d30bad4f28792c32a4a032dc55654e9a88149f9327cee3f7a0000c5f46b3c8520765db3a3bcaaa6a1761b993563249f213c",
+          "sha256": "1c50ae6f88e7528619302598cb2399549b76b9ac38dfbde102d26b88da1583a9",
+          "sha1": "28658f03de31822b8e7dd3a1d854d91bf56e1095",
+          "md5": "ab512827eca3fbdd7ddbc9714bcdf6fc"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "gnucobol-kmp-android-0.0.5-sources.jar",
+          "url": "gnucobol-kmp-android-0.0.5-sources.jar",
+          "size": 1996,
+          "sha512": "908fc401d1a5f1bb51b6d0a84a33ad03a4e0361afed3320b9083d48af19fdf0306165f15b5ef95b548180b330ab116efbc4281293f5c1cab573aedd19e291c74",
+          "sha256": "a6a4e75d03723ef17c9e76c3802a1dafa2e433b8dfb01f5e8282ed321f3d4b42",
+          "sha1": "ca60e102f0e32c3f2f51722333e796e67272c681",
+          "md5": "c6292c1aec8b4479db6278de386a51a0"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../gnucobol-kmp/0.0.5/gnucobol-kmp-0.0.5.module",
+    "group": "ca.rmen",
+    "module": "gnucobol-kmp",
+    "version": "0.0.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.3.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gnucobol-kmp-iosArm64Main-0.0.5.klib",
+          "url": "gnucobol-kmp-iosarm64-0.0.5.klib",
+          "size": 5947,
+          "sha512": "926e01f6cc37eff799ad3a2204e2b85436feea84fca9bf84a84ec079dd4a4483268b551cd357b8ada0564d4c7ac05316e806c71a6d2760d547e2558683cad476",
+          "sha256": "f0a5e40229ed5a27a6f5b0d0ad592ae3389313071098003fe35f889a1c6b8147",
+          "sha1": "3207eb45c485db58564407983552aac4a13ac73e",
+          "md5": "2c7728cfedc23ab2b8ef146f4fcb8ea5"
+        },
+        {
+          "name": "gnucobol-kmp-iosArm64Cinterop-gnuCobolMain-0.0.5.klib",
+          "url": "gnucobol-kmp-iosarm64-0.0.5-cinterop-gnuCobol.klib",
+          "size": 5198,
+          "sha512": "465174dfdd4b4548affda75dd75f6288093147df595a1dcab8571aa221c725e37d123abcb993229d2def3a41840a0a926dab4d957dc685db082f2e10e9e836dd",
+          "sha256": "889ea790d2b2fb454e23b103df63c5b43089487deb890b245326bb1b8c9f2934",
+          "sha1": "c8347cccfd920daa3b0b5c4487d6914d06330f81",
+          "md5": "97fc4611113a8557587166aaf5ce3e51"
+        },
+        {
+          "name": "gnucobol-kmp-iosArm64Cinterop-swiftPMImportMain-0.0.5.klib",
+          "url": "gnucobol-kmp-iosarm64-0.0.5-cinterop-swiftPMImport.klib",
+          "size": 97405,
+          "sha512": "5a9b889c9c47b96b2100bc0642b786f2efcd58f39eef1bfc71c7de5c7799ae32b14a11d14543570d4f32e12dafeabf5b6c26dfb512b3a4aa1fb99c5d944bea6e",
+          "sha256": "64cebcb3b0fa3db9495c7b267d93192baacead08e4ce09aad169d82369345095",
+          "sha1": "34d3408ba38fe6ae845776d26816c94e54b3cd15",
+          "md5": "f74759e07d284ca318adf10eb89f1245"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "gnucobol-kmp-iosarm64-0.0.5-sources.jar",
+          "url": "gnucobol-kmp-iosarm64-0.0.5-sources.jar",
+          "size": 2091,
+          "sha512": "b65b39783712a22dfd092d00d85e765103a3f69e100f6439b3eafbe169d30c8cce7e187f90914fe81ff5cb72b0ca4142fdf26195007c4e10e0edbc0943395cad",
+          "sha256": "45ad4a248fb1ce4c4fd64957b1bd825980ac0d7d080101721a4ce6fb8ff87313",
+          "sha1": "20efca210c4d3281fa61c2bed3554f1b2fd5a92d",
+          "md5": "5715f7df6df3f007358f69f5b7afa182"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.4.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "gnucobol-kmp-iosarm64-0.0.5-metadata.jar",
+          "url": "gnucobol-kmp-iosarm64-0.0.5-metadata.jar",
+          "size": 148992,
+          "sha512": "9a2dcd544ef6a0cfaa4e7f8f8b1398454778c0ea6ccd8e11d1c9d8df5210905776c582182fd1dfc46b063ece1fd684588d9887ceef723c7f45cf5c46daa40d6c",
+          "sha256": "387cf6609fe31468ceb0c9365dce3b374d7c38d55c7948ad48e73b6dc66cb685",
+          "sha1": "60d7dfc9d1a81432ee508093ef3505242d3a1ac0",
+          "md5": "d663fabc6a09f9555803ac970e739e2b"
+        }
+      ]
+    }
+  ]
+}
