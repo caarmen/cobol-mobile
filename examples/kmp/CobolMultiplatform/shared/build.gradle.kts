@@ -29,7 +29,11 @@ kotlin {
 
     androidLibrary {
        namespace = "ca.rmen.coboldemo.shared"
-       compileSdk = libs.versions.android.compileSdk.get().toInt()
+       compileSdk {
+           version = release(37) {
+                minorApiLevel = 1
+           }
+       }
        minSdk = libs.versions.android.minSdk.get().toInt()
     
        compilerOptions {
@@ -56,7 +60,7 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(libs.gnucobol.kmp)
+            api(libs.gnucobol.kmp)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

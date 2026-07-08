@@ -13,7 +13,11 @@ version = "0.0.5"
 kotlin {
     androidLibrary {
         namespace = "ca.rmen.gnucobol.kmp"
-        compileSdk = libs.versions.android.compileSdk.get().toInt()
+        compileSdk {
+            version = release(37) {
+                minorApiLevel = 1
+            }
+        }
         minSdk = libs.versions.android.minSdk.get().toInt()
 
         compilerOptions {
@@ -50,7 +54,7 @@ kotlin {
 
     sourceSets {
         androidMain.dependencies {
-            implementation(libs.gnucobol)
+            api(libs.gnucobol)
         }
         commonMain.dependencies {
             //put your multiplatform dependencies here

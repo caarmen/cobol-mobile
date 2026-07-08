@@ -35,12 +35,12 @@ add_library(${PROJECT_NAME} SHARED
 )
 add_dependencies(${PROJECT_NAME} transpile_cobol)
 
-find_package(cob REQUIRED CONFIG)
-set_target_properties(cob::libcob PROPERTIES IMPORTED_SONAME "libcob.so")
-get_target_property(LIBCOB_INCLUDE_DIRS cob::libcob INTERFACE_INCLUDE_DIRECTORIES)
+find_package(gnucobol-android REQUIRED CONFIG)
+set_target_properties(gnucobol-android::cob PROPERTIES IMPORTED_SONAME "libcob.so")
+get_target_property(LIBCOB_INCLUDE_DIRS gnucobol-android::cob INTERFACE_INCLUDE_DIRECTORIES)
 
 target_link_libraries(${PROJECT_NAME}
-        cob::libcob
+        gnucobol-android::cob
         android
         log
 )

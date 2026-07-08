@@ -22,7 +22,11 @@ dependencies {
 
 android {
     namespace = "ca.rmen.coboldemo"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    compileSdk {
+        version = release(37) {
+            minorApiLevel = 1
+        }
+    }
 
     defaultConfig {
         applicationId = "ca.rmen.coboldemo"
