@@ -4,11 +4,11 @@
 //==========================================================================
 
 // Declare the COBOL program.
-extern int ANSWER__TO__LIFE(int *);
+extern int ANSWER__TO__LIFE(const char *, int *);
 
 // Create C wrapper around the COBOL program.
-int answerToLife(void) {
+int answerToLife(const char *filePath) {
 	int result = 0;
-	ANSWER__TO__LIFE(&result);
+	ANSWER__TO__LIFE(filePath, &result);
 	return result;
 }

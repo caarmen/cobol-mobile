@@ -1,7 +1,6 @@
 package ca.rmen.coboldemo
 
 interface AnswerToLifeGateway {
-    fun getAnswerToLife(): Int
+    fun getAnswerToLife(filePath: String): Int
+    fun getTempFilePath(): String
 }
-
-expect fun AnswerToLifeGateway(): AnswerToLifeGateway

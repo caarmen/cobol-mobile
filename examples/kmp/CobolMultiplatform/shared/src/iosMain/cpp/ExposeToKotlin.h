@@ -4,4 +4,5 @@
 
 #pragma once
 
-int answerToLife(void);
+int answerToLife(const char *);
+

@@ -18,17 +18,17 @@ import ca.rmen.gnucobol.kmp.GnuCOBOL
 
 
 @Composable
-fun App() {
+fun App(gateway: AnswerToLifeGateway= PreviewAnswerToLifeGateway()) {
     // In reality, this type of initialization call might be better
     // suited in app startup, which would be specific to Android and iOS.
     // We put it here just to demonstrate an example of calling COBOL code
     // from shared kmp code (commonMain).
     remember { GnuCOBOL.initialize() }
-    App(AnswerToLifeGateway())
+    PrivateApp(gateway)
 }
 
 @Composable
-private fun App(gateway: AnswerToLifeGateway) {
+private fun PrivateApp(gateway: AnswerToLifeGateway) {
     MaterialTheme {
         var greetingText by remember { mutableStateOf("Click the button to find out...") }
         Column(
@@ -41,7 +41,9 @@ private fun App(gateway: AnswerToLifeGateway) {
             Greeting(name = greetingText)
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = {
-                greetingText = "${gateway.getAnswerToLife()}"
+                val tempDir = gateway.getTempFilePath()
+                println("write to $tempDir")
+                greetingText = "${gateway.getAnswerToLife(tempDir)}"
             }) {
                 Text("Ask COBOL")
             }
@@ -60,7 +62,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun AppPreview() {
-    App(object : AnswerToLifeGateway {
-        override fun getAnswerToLife(): Int = 123
-    })
+    App(PreviewAnswerToLifeGateway())
+}
+
+private class PreviewAnswerToLifeGateway : AnswerToLifeGateway {
+    override fun getAnswerToLife(filePath: String): Int = 123
+    override fun getTempFilePath(): String = "temp"
 }
